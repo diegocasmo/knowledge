@@ -1,5 +1,6 @@
-# Client-Side Routing
+# Navigation Redirects Through Redux Middleware
 
+### Client-Side Routing
 Routing in client-side applications usually starts off as a small number of routes with a few redirects or custom code here and there. But as soon as the application starts to grow and the number of features on it increases, routing commonly becomes a hard to maintain and complex domain. Ever more interactive client-side applications require an intuitive and consistent routing solution to provide a better UX, and we as developers must make sure we use equally intuitive and consistent design paradigms to deal with complex routing requirements.
 
 The goal of this blog post is to explain how to use [Redux](https://github.com/reactjs/redux) middleware to create a solution for client-side navigation redirects which is intuitive, scalable, and easy to maintain.

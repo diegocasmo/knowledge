@@ -2,7 +2,7 @@
 
 - [A Short List of Good Practices in Programming](2017-06-19-good-programming-practices.md)
 - [A Simple React ``<Tabs/>`` Component](2017-02-06-a-simple-react-tabs-component.md)
-- [Client-Side Routing](2017-01-23-navigation-redirects-through-redux-middleware.md)
+- [Navigation Redirects Through Redux Middleware](2017-01-23-navigation-redirects-through-redux-middleware.md)
 - [A Review of Machine Learning Foundations — A Case Study Approach by Coursera](2017-01-03-a-review-of-machine-learning-foundations-a-case-study-approach-by-coursera.md)
 - [Using React’s Context to Pass Variables From the Server to the Client](2016-10-24-passing-variables-in-an-isomorphic-application.md)
 - [VirtualBox Shared Folders + SSH from OSX Host to Ubuntu Server Guest Tutorial](2016-08-22-virtual-box-ssh-shared-folders-tutorial.md)
