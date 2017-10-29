@@ -1,0 +1,18 @@
+# Blog Posts - Software
+
+- [A Short List of Good Practices in Programming](2017-06-19-good-programming-practices.md)
+- [A Simple React ``<Tabs/>`` Component](2017-02-06-a-simple-react-tabs-component.md)
+- [Client-Side Routing](2017-01-23-navigation-redirects-through-redux-middleware.md)
+- [A Review of Machine Learning Foundations — A Case Study Approach by Coursera](2017-01-03-a-review-of-machine-learning-foundations-a-case-study-approach-by-coursera.md)
+- [Using React’s Context to Pass Variables From the Server to the Client](2016-10-24-passing-variables-in-an-isomorphic-application.md)
+- [VirtualBox Shared Folders + SSH from OSX Host to Ubuntu Server Guest Tutorial](2016-08-22-virtual-box-ssh-shared-folders-tutorial.md)
+- [The Basics of TypeScript](2016-08-01-the-basics-of-typescript.md)
+- [An Introduction to Data Mining](2016-03-07-an-introduction-to-data-mining.md)
+- [Improving Application Performance and Responsiveness on the Client](2016-01-28-better-performance-on-the-client.md)
+- [Getting Started With Acceptance Testing](2016-01-18-getting-started-with-acceptance-testing.md)
+- [Depth First Search In Undirected Graphs](2016-01-01-depth-first-search-undirected-graphs.md)
+- [The Fast Fourier Transform Algorithm](2015-12-26-fft.md)
+- [The Merge Sort Algorithm](2015-12-20-merge-sort.md)
+- [The Karatsuba Multiplication Algorithm](2015-12-17-karatsuba-multiplication.md)
+- [Backbone Required Attributes](2015-07-28-backbone-required-attributes.md)
+- [Simple BDD Backbone Views](2015-05-27-simple-bdd-backbone-views.md)
