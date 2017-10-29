@@ -1,7 +1,7 @@
-# A* Search Algorithm
+# The A* Search Algorithm
 
 ### Introduction
-- what is search?
+- what is search/motivation?
 - goal of the blog post
 
 ### Content
