@@ -1,5 +1,6 @@
 # [Database Design II](http://uu.se/en/admissions/master/selma/kursplan/?kKod=1DL400&lasar=)
 
+### Content
 The course contains a deeper treatment of the database area that comprises
   - introduction to safety and access control,
   - mechanisms for data integrity,
@@ -13,3 +14,6 @@ The course contains a deeper treatment of the database area that comprises
   - handling of distributed databases,
   - the tuning of database parameters, and
   - an overview of requirements from, and design of, advanced database applications.
+
+### Notes
+  - [Disk Storage, Basic File Structures, Hashing, and Modern Storage Architectures](2017-11-01-chapter-16.md)
