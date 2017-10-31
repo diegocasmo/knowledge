@@ -4,4 +4,4 @@
 Asymptotic notation and recurrence equations. Data structures for disjoint sets. Dynamic programming. Greedy algorithms. Graph algorithms such as shortest path and minimum spanning tree. Maximum flow problem in flow networks. Algorithms for string matching. Theory of intractable problems.
 
 ### Notes
-  - []()
+  - [Algorithm Analysis](2017-10-31-algorithm-analysis.md)
