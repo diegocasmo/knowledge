@@ -1,5 +1,7 @@
 # Lecture: Divide-and-conquer
+
 Readings: CLRS3 Chapter 4 (except 4.6)
+
 Slides: [http://www.cs.princeton.edu/~wayne/kleinberg-tardos/pdf/05DivideAndConquerI.pdf](http://www.cs.princeton.edu/~wayne/kleinberg-tardos/pdf/05DivideAndConquerI.pdf)
 
 ### Divide-and-conquer

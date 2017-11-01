@@ -1,5 +1,7 @@
 # Lecture: Algorithm Analysis
+
 Readings: CLRS3 Chapter 3
+
 Slides: [http://www.cs.princeton.edu/~wayne/kleinberg-tardos/pdf/02AlgorithmAnalysis.pdf](http://www.cs.princeton.edu/~wayne/kleinberg-tardos/pdf/02AlgorithmAnalysis.pdf)
 
 ### Asymptotic Order of Growth
