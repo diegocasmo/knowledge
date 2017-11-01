@@ -5,3 +5,4 @@ Asymptotic notation and recurrence equations. Data structures for disjoint sets.
 
 ### Notes
   - [Algorithm Analysis](2017-10-31-algorithm-analysis.md)
+  - [Divide-and-conquer](2017-11-01-divide-and-conquer.md)
