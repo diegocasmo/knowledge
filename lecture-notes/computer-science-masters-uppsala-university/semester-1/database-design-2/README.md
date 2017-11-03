@@ -16,5 +16,5 @@ The course contains a deeper treatment of the database area that comprises
   - an overview of requirements from, and design of, advanced database applications.
 
 ### Notes
-  - [Disk Storage, Basic File Structures, Hashing, and Modern Storage Architectures](2017-10-30-chapter-16.md)
+  - [Disk Storage](2017-10-30-disk-storage.md)
   - [Basic File Structures, Hashing, and Modern Storage Architectures](2017-11-01-basic-file-structures-hashing.md)
