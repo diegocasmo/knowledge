@@ -17,4 +17,4 @@ The course contains a deeper treatment of the database area that comprises
 
 ### Notes
   - [Disk Storage, Basic File Structures, Hashing, and Modern Storage Architectures](2017-10-30-chapter-16.md)
-  [Basic File Structures, Hashing, and Modern Storage Architectures](2017-11-01-basic-file-structures-hashing.md)
+  - [Basic File Structures, Hashing, and Modern Storage Architectures](2017-11-01-basic-file-structures-hashing.md)
