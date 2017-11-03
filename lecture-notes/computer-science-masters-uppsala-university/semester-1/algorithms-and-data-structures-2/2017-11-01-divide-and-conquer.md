@@ -22,4 +22,4 @@ Slides: [http://www.cs.princeton.edu/~wayne/kleinberg-tardos/pdf/05DivideAndConq
   - recursively sort right half
   - merge two halves to make a sorted whole
 - Merge sort is ``O(n log n)`` (see detailed proofs in slides)
-- When creating a proof, a recursion tree can be a powerful tool to provide intuition to later on work on a formal proof
+- When creating a proof, a recursion tree can be a powerful tool to provide intuition to later on work on a formal proof (for instance, with the substitution method)
