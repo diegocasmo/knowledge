@@ -1,4 +1,4 @@
-# Lecture: Disk Storage, Basic File Structures, Hashing, and Modern Storage Architectures
+# Lecture: Disk Storage
 
 Readings: Chapter 16, Fundamentals of database systems, Seventh Edition (R. Elmasri, S. Navathe).
 
