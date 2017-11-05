@@ -18,3 +18,4 @@ The course contains a deeper treatment of the database area that comprises
 ### Notes
   - [Disk Storage](2017-10-30-disk-storage.md)
   - [Basic File Structures, Hashing, and Modern Storage Architectures](2017-11-01-basic-file-structures-hashing.md)
+  - [Indexing Structures for Files and Physical Database Design](2017-11-03-indexes.md)
