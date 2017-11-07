@@ -33,4 +33,4 @@ Readings: Chapter 11, Database System Concepts, Sixth Edition (Avi Silberschatz,
 - example of operations on B+-trees:
   - [B+-Trees basics](https://www.youtube.com/watch?v=CYKRMz8yzVU)
   - [B+ Trees insertion](https://www.youtube.com/watch?v=_nY8yR6iqx4&t=198s)
-  - [B+ Trees deletion](https://www.youtube.com/watch?v=QrbaQDSux M)
+  - [B+ Trees deletion](https://www.youtube.com/watch?v=QrbaQDSuxIM&t=5s)
