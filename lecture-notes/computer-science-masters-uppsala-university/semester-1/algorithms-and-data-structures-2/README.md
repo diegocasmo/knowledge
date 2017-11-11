@@ -8,3 +8,4 @@ Asymptotic notation and recurrence equations. Data structures for disjoint sets.
   - [Divide-and-conquer](2017-11-01-divide-and-conquer.md)
   - [The Master Theorem](2017-11-02-the-master-method.md)
   - [Dynamic Programming](2017-11-02-dynamic-programming.md)
+  - [Greedy Algorithms](2017-11-08-greedy-algorithms.md)
