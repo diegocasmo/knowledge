@@ -14,8 +14,8 @@ Readings: Chapter 11, Database System Concepts, Sixth Edition (Avi Silberschatz,
 - characteristics of a B+-tree index file
   - all paths from root to leaf are of the same length
   - where ``n`` is the number of pointers the node has
-    - each node that is not a root nor leaf node has between ``floor(n/2)`` and ``n`` children
-    - a leaf note has between ``floor(n-1)/2`` and ``n-1`` values
+    - each node that is not a root nor leaf node has between ``ceil(n/2)`` and ``n`` children
+    - a leaf note has between ``ceil(n-1)/2`` and ``n-1`` values
     - special cases
       - if root is not a leaf, it has a least ``2`` children
       - if root is a leaf, it can have between ``0`` and ``n-1`` values
