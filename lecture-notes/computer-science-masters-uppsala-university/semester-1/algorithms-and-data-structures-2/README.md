@@ -9,3 +9,4 @@ Asymptotic notation and recurrence equations. Data structures for disjoint sets.
   - [The Master Theorem](2017-11-02-the-master-method.md)
   - [Dynamic Programming](2017-11-02-dynamic-programming.md)
   - [Greedy Algorithms](2017-11-08-greedy-algorithms.md)
+  - [Graphs](2017-11-10-graphs.md)
