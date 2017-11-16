@@ -10,3 +10,4 @@ Asymptotic notation and recurrence equations. Data structures for disjoint sets.
   - [Dynamic Programming](2017-11-02-dynamic-programming.md)
   - [Greedy Algorithms](2017-11-08-greedy-algorithms.md)
   - [Graphs](2017-11-10-graphs.md)
+  - [Minimum Spanning Trees](2017-11-10-minimum-spanning-trees.md)
