@@ -12,3 +12,5 @@ Asymptotic notation and recurrence equations. Data structures for disjoint sets.
   - [Graphs](2017-11-10-graphs.md)
   - [Minimum Spanning Trees](2017-11-10-minimum-spanning-trees.md)
   - [Dijkstra's Algorithm](2017-11-14-dijkstra-algorithm.md)
+  - [Maximum Flow](2017-11-21-maximum-flow.md)
+  - [Bipartite Matching](2017-11-22-bipartite-matching.md)
