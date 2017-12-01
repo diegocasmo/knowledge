@@ -1,6 +1,6 @@
 # Lecture: Query Processing
 
-Readings: Chapter 12,, Database System Concepts, Sixth Edition (Avi Silberschatz, Henry F. Korth, S. Sudarshan).
+Readings: Chapter 12, Database System Concepts, Sixth Edition (Avi Silberschatz, Henry F. Korth, S. Sudarshan).
 
 ### Query Processing
 - query tree notation

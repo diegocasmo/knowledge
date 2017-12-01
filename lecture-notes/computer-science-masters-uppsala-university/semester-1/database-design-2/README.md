@@ -21,3 +21,4 @@ The course contains a deeper treatment of the database area that comprises
   - [Indexing Structures for Files and Physical Database Design](2017-11-03-indexes.md)
   - [B+-Tree Index Files](2017-11-03-b-plus-tree.md)
   - [Query Processing](2017-11-13-query-processing.md)
+  - [Query Optimization](2017-11-16-query-optimization.md)
