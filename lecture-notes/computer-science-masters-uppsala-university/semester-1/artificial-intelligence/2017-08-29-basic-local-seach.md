@@ -1,6 +1,6 @@
 # Lecture: Basic & Local Search
 
-Readings: Ch. 3,  Russell, Stuart Jonathan; Norvig, Peter Artificial Intelligence: A Modern Approach 3
+Readings: Ch. 3, Russell, Stuart Jonathan; Norvig, Peter Artificial Intelligence: A Modern Approach 3
 
 ### Search
 - Concepts

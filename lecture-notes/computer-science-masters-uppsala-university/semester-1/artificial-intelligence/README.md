@@ -6,3 +6,4 @@ Applications of AI, for instance in computer games.
 
 ### Notes
   - [Basic & Local Search](2017-08-29-basic-local-seach.md)
+  - [Heuristic & Competitive Search](2017-08-30-heuristic-&-competitive-search.md)
