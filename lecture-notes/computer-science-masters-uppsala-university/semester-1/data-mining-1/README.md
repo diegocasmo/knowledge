@@ -5,3 +5,4 @@ Introduction to data mining, its terminology and overview over various types of 
 
 ### Notes
   - [Data](2017-08-29-data.md)
+  - [Comparing Objects](2017-08-31-comparing-objects.md)
