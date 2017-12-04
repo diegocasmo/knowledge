@@ -20,5 +20,6 @@ The course contains a deeper treatment of the database area that comprises
   - [Basic File Structures, Hashing, and Modern Storage Architectures](2017-11-01-basic-file-structures-hashing.md)
   - [Indexing Structures for Files and Physical Database Design](2017-11-03-indexes.md)
   - [B+-Tree Index Files](2017-11-03-b-plus-tree.md)
-  - [Query Processing](2017-11-13-query-processing.md)
-  - [Query Optimization](2017-11-16-query-optimization.md)
+  - [Query Processing](2017-11-06-query-processing.md)
+  - [Query Optimization](2017-11-08-query-optimization.md)
+  - [NOSQL Databases and Big Data Storage Systems](2017-11-13-nosql-databases.md)

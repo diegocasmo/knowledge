@@ -1,0 +1,169 @@
+# Lecture: NOSQL Databases and Big Data Storage Systems
+
+Readings: Chapter 24, Fundamentals of database systems, Seventh Edition (R. Elmasri, S. Navathe).
+
+### NOSQL Databases and Big Data Storage Systems
+- NOSQL: not only SQL
+- most NOSQL systems are distributed databases or distributed storage systems which focus on semi-structured data storage, high performance, availability, data replication, and scalability
+- why NOSQL?
+  - SQL systems offer too many services (powerful query language, concurrency control, etc.)
+  - a structured data model may be too restrictive
+  - relational systems require schema, NOSQL systems don't
+- NOSQL systems focus on storage of 'big data'
+- typical applications that use NOSQL
+  - social media, web links, user profiles, marketing and sales, posts and tweets, road maps and spatial data, email, etc
+- Examples
+  - DynamoDB (Amazon): key-value data store
+  - BigTable: Google's proprietary NOSQL system. Column-based or wide column store
+  - Cassandra (Facebook): uses concepts from both key-value store and column-based systems
+  - MongoDB and CouchDB: document stores
+  - Neo4J and GraphBase: graph-based NOSQL systems
+  - OrientDB: combines several concepts
+- NOSQL characteristics
+  - scalability
+    - horizontal scalability (by adding more nodes) is employed while the system is operational, so techniques for distributing the existing data among new nodes without interrupting system operation are necessary
+  - availability, replication, and eventual consistency
+    - requirement for continuous system availability (data is replicated over many nodes in transparent manner)
+    - if one node fails, the data is still available on other nodes
+    - replication improves data availability and read performance (however, write performance becomes more cumbersome, must write to every copy of the replicated data items)
+    - this can slow down write performance if serializable consistency is required, so more relaxed forms of consistency known as eventual consistency are used
+  - sharding of files
+    - NOSQL applications can have millions of records, and these
+    records can be accessed concurrently by thousands of users (it is not practical to store the whole file in one node)
+    - sharding (also known as horizontal partitioning) of the file
+    records is employed
+    - this serves to distribute the load of accessing the file records to multiple nodes
+    - the combination of sharding and replicating the shards works
+    towards improving load balancing as well as data availability
+  - schema not required
+    - semi-structured, self describing data facilitates this flexibility of no schema
+    - the lack of schema and constraints:
+      - constraints on the data would have to be programmed
+    - languages for describing semi-structured data are
+      - JSON (JavaScript Object Notation)
+      - XML (Extensible Markup Language)
+  - less powerful query languages
+    - we may not require a powerful query language such as SQL because search (read) queries often locate single objects in a single file based on their object keys
+    - in many cases, the operations are called CRUD operations
+    - only a subset of SQL querying capabilities are provided (many NOSQL systems do not provide join operations)
+- replication models
+  - master-slave
+    - requires one copy to be the master copy
+    - all write operations must be applied to the master copy and then propagated to the slave copies
+    - usually using eventual consistency (the slave copies will eventually be the same as the master copy)
+  - master-master replication
+    - allows reads and writes at any of the replicas
+    - may not guarantee that reads at nodes that store different copies see the same values
+    - different users may write the same data item concurrently at different nodes of the system (so the values of the item will be temporarily inconsistent)
+- categories of NOSQL systems
+  - document-based NOSQL systems: documents are accessible via their document id, but can also be accessed rapidly using other indexes
+  - NOSQL key-value stores: simple data model based on fast access by the key to the value associated with the key (hashing)
+  - graph-based NOSQL systems:  data is represented as graphs, and related nodes can be found by traversing the edges
+  - column-based or wide column NOSQL systems
+  - hybrid NOSQL systems: these systems have characteristics from two or more of the above four categories
+- consistency
+  - various levels of consistency among replicated data items (enforcing serializabilty is the strongest form of consistency)
+  - ACID properties
+    - atomicity: transaction performed in its entirety or not at all
+    - consistency preservation: takes database from one consistent state to another
+    - isolation: not interfered with by other transactions
+    - durability or permanency: changes must persist in the database
+  - high overhead: can reduce operation performance (especially on NOSQL replicated systems)
+- the CAP theorem
+  - CAP theorem refers to three desirable properties of distributed systems with replicated data
+    - consistency: among replicated copies (consider a variable ``X1`` replicated 4 times and updated concurrently by 6 users)
+    - availability: we receive a non-error response (without guarantee that it is the most recent write)
+    - partition tolerance: continue to operate despite loss of messages by the network between nodes
+  - not possible to guarantee all three simultaneously in distributed system with data replication
+  - weaker consistency level is often acceptable in NOSQL distributed data store (eventual consistency often adopted)
+  - guaranteeing availability and partition tolerance more important
+  - eventually all accesses to an item will return the last updated value
+
+### MongoDB
+- collections of similar documents
+- individual documents resemble complex objects or XML documents
+  - documents are self-describing
+  - can have different data elements
+- documents can be specified in various formats: XML, JSON
+- MongoDB supports CRUD operations
+- documents stored in binary JSON (BSON) format
+- individual documents stored in a collection
+- each document in collection has unique ``ObjectID`` field called ``_id``
+- a collection does not have a schema
+  - structure of the data fields in documents chosen based on how documents will be accessed
+  - user can choose normalized or denormalized design
+- replication
+  - concept of replica set to create multiple copies on different nodes
+  - variation of master-slave approach
+    - a replica set will have one primary copy of a collection ``C`` stored in one node ``N1``, and at least one secondary copy (replica) of ``C`` stored at another node ``N2``
+  - primary copy, secondary copy, and arbiter
+    - arbiter participates in elections to select new primary if needed
+  - all write operations applied to the primary copy and propagated to the secondaries
+    - user can choose read preference
+    - read requests can be processed at any replica
+- sharding
+  - horizontal partitioning divides the documents into disjoint partitions (shards)
+  - allows adding more nodes as needed
+  - shards stored on different nodes to achieve load balancing
+  - partitioning field (shard key) must exist in every document in the collection (must have an index; use of shard key)
+  - range partitioning
+    - creates chunks by specifying a range of key values
+    - works best with range queries
+  - Hash partitioning
+    - partitioning based on the hash values of each shard key
+    - hash function ``h(K)`` to each shard key ``K`` to give the shard
+
+### NOSQL Key-Value Stores
+- key-value stores focus on high performance, availability, and scalability
+- can store structured, unstructured, or semistructured data
+- key: unique identifier associated with a data item (used for fast retrieval)
+- value: the data item itself (can be string or array of bytes)
+- no query language
+- DynamoDB
+  - DynamoDB part of Amazon's Web Services/SDK platforms (proprietary)
+  - table holds a collection of self-describing items
+  - item consists of attribute-value pairs (records-tuples)
+    - attribute values can be single or multi-valued
+  - primary key used to locate items within a table
+    - can be single attribute or pair of attributes
+  - the primary key will be a pair of attributes ``(A, B)``:
+    - attribute ``A`` will be used for hashing, and because there will be multiple items with the same value of ``A``,
+    - the ``B`` values will be used for ordering the records with the same ``A`` value.
+    - a table with this type of key can have additional secondary indexes defined
+- examples of other key-value stores
+  - oracle key-value store: oracle NOSQL Database
+  - redis key-value cache and store
+    - caches data in main memory to improve performance
+    - offers master-slave replication and high availability
+    - offers persistence by backing up cache to disk
+  - apache Cassandra (used by Facebook and others)
+    - offers features from several NOSQL categories
+
+### NOSQL Graph Databases and Neo4j
+- graph databases
+  - data represented as a graph
+  - collection of vertices (nodes) and edges
+  - possible to store data associated with both individual nodes and individual edges
+- Neo4j
+  - open source system
+  - uses concepts of nodes and relationships
+    - nodes can have labels
+      - zero, one, or several
+    - both nodes and relationships can have properties
+    - each relationship has a start node, end node, and a relationship type
+    - properties specified using a map pattern
+  - creating nodes
+    - CREATE command
+    - part of high-level declarative query language Cypher
+    - node label can be specified when node is created
+    - properties are enclosed in curly brackets
+  - path
+    - traversal of part of the graph
+    - typically used as part of a query to specify a pattern
+  - schema optional in Neo4j
+  - indexing and node identifiers
+    - users can create for the collection of nodes that have a particular label
+    - one or more properties can be indexed
+  - Cypher query made up of clauses
+  - result from one clause can be the input to the next clause in the query
+  - Neo4j has a graph visualization interface, so that a subset of the nodes and edges in a database graph can be displayed as a graph
