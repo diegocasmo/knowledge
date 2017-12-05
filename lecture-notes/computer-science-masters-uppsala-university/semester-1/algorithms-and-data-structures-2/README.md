@@ -14,3 +14,4 @@ Asymptotic notation and recurrence equations. Data structures for disjoint sets.
   - [Dijkstra's Algorithm](2017-11-14-dijkstra-algorithm.md)
   - [Maximum Flow](2017-11-21-maximum-flow.md)
   - [Bipartite Matching](2017-11-22-bipartite-matching.md)
+  - [Disjoint Sets](2017-11-28-disjoint-sets.md)
