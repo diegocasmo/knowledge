@@ -1,0 +1,52 @@
+# Lecture: Big Data Technologies Based on MapReduce
+
+Readings: Chapter 25, Fundamentals of database systems, Seventh Edition (R. Elmasri, S. Navathe).
+
+### Big Data Technologies Based on MapReduce
+- big data refers to massive amounts of data which exceeds the typical reach of a DBMS
+- three V's:
+  - volume
+    - refers to size of data managed by the system
+    - automatically generated data
+  - velocity
+    - speed of data creation, storage, and processing
+    - the types and frequency of data are disruptive to traditional database management tools
+    - consider the typical speed of transactions on stock exchanges; billions of transactions per day
+  - variety
+    - refers to type of data source
+    - traditional applications were mainly transactions:
+      - financial, insurance, travel, health care, retail industries, and governmental, judicial processing.
+    - the types of sources have expanded dramatically:
+      - internet data (e.g., click-stream and social media), research data (e.g., surveys and industry reports),
+      - location data (e.g., mobile device data and geo-spatial data)
+      - images(e.g.,satellites and medical-scanning), videos (YouTube)
+      - e-mails
+    - how to integrate and process all such types?
+      - credibility of the source
+      - suitability of data for the target audience
+      - evaluated through quality testing or credibility analysis
+- core components of Hadoop
+  - MapReduce programming paradigm
+    - gist
+      - sequentially read a lot of data
+      - map:
+        - extract something you care about
+      - group by key: sort and shuffle
+      - reduce:
+        - aggregate, summarize, filter or transform
+      - write the result
+    - fault-tolerant implementation and runtime environment
+    - automatically parallelized and executed on large clusters of commodity hardware
+    - map
+      - generic function that takes a key of type ``k1`` and value of type ``v1``
+      - returns a list of key-value pairs of type ``k2`` and ``v2``
+    - reduce
+      - generic function that takes a key of type ``k2`` and a list of values ``v2`` and returns pairs of type ``(k3, v3)``
+    - outputs from the map function must match the input type of the reduce function
+    - MapReduce environment takes care of:
+      - partitioning the input data
+      - scheduling the program's execution across a set of machines
+      - performing the group by key step
+      - handling machine failures
+      - managing required inter-machine communication
+  - Hadoop Distributed File System (HDFS)
