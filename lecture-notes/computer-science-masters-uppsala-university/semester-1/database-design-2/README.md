@@ -24,3 +24,4 @@ The course contains a deeper treatment of the database area that comprises
   - [Query Optimization](2017-11-08-query-optimization.md)
   - [NOSQL Databases and Big Data Storage Systems](2017-11-13-nosql-databases.md)
   - [Big Data Technologies Based on MapReduce](2017-11-16-big-data-based-on-map-reduce.md)
+  - [Transactions, Concurrency Control, Recovery](2017-11-23-transactions-concurrency.md)
