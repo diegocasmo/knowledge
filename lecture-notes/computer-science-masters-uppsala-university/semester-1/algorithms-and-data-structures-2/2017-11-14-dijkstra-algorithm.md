@@ -1,6 +1,6 @@
 # Lecture: Dijkstra's Algorithm
 
-Readings: Chapter 24: pages 643-650 and Section 24.3 (we only study Dijkstra's algorithm)
+Readings: CLRS3 Chapter 24: pages 643-650 and Section 24.3 (we only study Dijkstra's algorithm)
 
 Slides: [http://www.cs.princeton.edu/~wayne/kleinberg-tardos/pdf/04GreedyAlgorithmsII.pdf](http://www.cs.princeton.edu/~wayne/kleinberg-tardos/pdf/04GreedyAlgorithmsII.pdf)
 

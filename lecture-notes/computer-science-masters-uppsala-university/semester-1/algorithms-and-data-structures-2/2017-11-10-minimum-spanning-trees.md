@@ -1,6 +1,6 @@
 # Lecture: Minimum Spanning Trees
 
-Readings: Chapter 23 (we only study Prim's algorithm)
+Readings: CLRS3 Chapter 23 (we only study Prim's algorithm)
 
 Slides: [http://www.cs.princeton.edu/~wayne/kleinberg-tardos/pdf/04GreedyAlgorithmsII.pdf](http://www.cs.princeton.edu/~wayne/kleinberg-tardos/pdf/04GreedyAlgorithmsII.pdf)
 

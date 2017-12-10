@@ -16,3 +16,4 @@ Asymptotic notation and recurrence equations. Data structures for disjoint sets.
   - [Bipartite Matching](2017-11-22-bipartite-matching.md)
   - [Disjoint Sets](2017-11-28-disjoint-sets.md)
   - [String Matching](2017-11-29-string-matching.md)
+  - [P versus NP](2017-12-05-p-versus-np.md)

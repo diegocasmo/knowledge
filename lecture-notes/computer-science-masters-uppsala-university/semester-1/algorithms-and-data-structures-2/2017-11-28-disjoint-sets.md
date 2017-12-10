@@ -1,6 +1,6 @@
 # Lecture: Disjoint Sets
 
-Readings: Chapter 21, except Sections 21.2 and 21.4
+Readings: CLRS3 Chapter 21, except Sections 21.2 and 21.4
 
 Slides: [http://www.cs.princeton.edu/~wayne/kleinberg-tardos/pdf/UnionFind.pdf](http://www.cs.princeton.edu/~wayne/kleinberg-tardos/pdf/UnionFind.pdf)
 

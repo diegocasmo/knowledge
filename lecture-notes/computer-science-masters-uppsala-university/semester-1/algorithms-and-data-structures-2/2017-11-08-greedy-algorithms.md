@@ -1,6 +1,6 @@
 # Lecture: Greedy Algorithms
 
-Readings: Chapter 16, except Sections *16.4 and *16.5: you are urged to study the additional example in Section 16.3
+Readings: CLRS3 Chapter 16, except Sections 16.4 and 16.5: you are urged to study the additional example in Section 16.3
 
 Slides: [http://www.cs.princeton.edu/~wayne/kleinberg-tardos/pdf/04GreedyAlgorithmsI.pdf](http://www.cs.princeton.edu/~wayne/kleinberg-tardos/pdf/04GreedyAlgorithmsI.pdf)
 

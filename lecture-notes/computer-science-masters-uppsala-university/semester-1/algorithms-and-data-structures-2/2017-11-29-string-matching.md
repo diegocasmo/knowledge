@@ -1,6 +1,6 @@
 # Lecture: String Matching
 
-Readings: Chapter 32, except Sections 32.3 and 32.4
+Readings: CLRS3 Chapter 32, except Sections 32.3 and 32.4
 
 Slides
   - [http://user.it.uu.se/~pierref/courses/AD2/slides/32-StringMatching-A.pdf](http://user.it.uu.se/~pierref/courses/AD2/slides/32-StringMatching-A.pdf)
