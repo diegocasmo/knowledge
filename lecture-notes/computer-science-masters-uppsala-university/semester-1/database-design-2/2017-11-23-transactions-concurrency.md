@@ -6,7 +6,7 @@ Readings:
 
 ### Transactions
 - single-user DBMS: at most one user at a time can use the system (home computer)
-- multiuser DBMS: many users can access the system (database) concurrently (airline reservations system)
+- multiuser DBMS: many users can access the system concurrently (airline reservations system)
 - multiprogramming
   - allows operating system to execute multiple processes concurrently
   - executes commands from one process, then suspends that process and executes commands from another process, etc
@@ -15,9 +15,6 @@ Readings:
   - a transaction must apply to a consistent database
   - during transaction execution the database may be inconsistent
   - when the transaction is committed, the database must be consistent
-- transaction processing systems
-  - systems with large databases and hundreds of concurrent users
-  - require high availability and fast response time
 - transaction state
   - active, the initial state; the transaction stays in this state while it is executing
   - partially committed, after the final statement has been executed
@@ -27,19 +24,25 @@ Readings:
     - kill the transaction
   - committed, after successful completion
 - read and write operations
-  - ``read_item(X)``
-    - reads a database item named ``X`` into a program variable named ``X``
-    - process includes finding the address of the disk block, and copying to and from a memory buffer
-  - ``write_item(X)``
-    - writes the value of program variable ``X`` into the database item named ``X``
-    - process includes finding the address of the disk block, copying to and from a memory buffer, and storing the updated disk block back to disk
-- read set of a transaction: set of all items read
-- write set of a transaction: set of all items written
+  - ``read_item(X)``: reads a database item named ``X`` into a program variable named ``X``
+  - ``write_item(X)``: writes the value of program variable ``X`` into the database item named ``X``
+- ACID properties
+  - atomicity
+    - either all operations of the transaction are properly reflected in the database or none are
+  - consistency
+    - execution of a transaction in isolation preserves the consistency of the database
+  - isolation
+    - although multiple transactions may execute concurrently, each transaction must be unaware of other concurrently executing transactions
+  - durability
+    - changes must persist in the database
+- the recovery-management component of a database system implements the support for atomicity and durability
 
 ### Concurrency Control
-- transactions submitted by various users may execute concurrently
-  - access and update the same database items
-  - some form of concurrency control is needed
+- the result of concurrent execution of transactions must be equivalent to a serial schedule
+- multiple transactions are allowed to run concurrently in the system. Advantages are:
+  - increased processor and disk utilization
+  - reduced average response time for transactions
+- concurrency control schemes: mechanisms to achieve isolation
 - issues that may arise
   - the lost update problem
     - occurs when two transactions that access the same database items have operations interleaved
@@ -49,10 +52,60 @@ Readings:
     - meanwhile, the updated item is accessed (read) by another transaction before it is changed back (or rolled back) to its original value
   - the incorrect summary problem
     - if one transaction is calculating an aggregate summary function on a number of database items while other transactions are updating some of these items, the aggregate function may calculate some values before they are updated and others after they are updated
+- schedules: sequences that indicate the chronological order in which instructions of concurrent transactions are executed
+  - a schedule for a set of transactions must consist of all instructions of those transactions
+  - must preserve the order in which the instructions appear in each individual transaction
+- in a serial schedule instructions of transactions are not interleaved; one transaction is executed completely before the other
+  - places simultaneous transactions in series: transaction ``T1`` before ``T2``, or vice versa
+- serializable schedules: always considered to be correct when concurrent transactions are executing
+- problem with serial schedules
+  - limit concurrency by prohibiting interleaving of operations
+  - unacceptable in practice
+  - solution: determine which schedules are equivalent to a serial schedule and allow those to occur
+- a (possibly concurrent) schedule is serializable if it is equivalent to a serial schedule
+  - serializable schedule of ``n`` transactions
+    - equivalent to some serial schedule of same ``n`` transactions
+- if a schedule ``S`` can be transformed into a schedule ``S'`` by a series of swaps of non-conflicting instructions, we say that ``S`` and ``S'`` are conflict equivalent
+- schedule ``S`` is serializable if it is conflict equivalent to some serial schedule ``S'``
+- precedence graph: a directed graph where the vertices are the transactions (names)
+- a schedule is conflict serializable if and only if its precedence graph is acyclic
+- if precedence graph is acyclic, the serializabilty order can be obtained by a topological sorting of the graph
+- being serializable is different from being serial
+- serializable schedule gives benefit of concurrent execution (without giving up any correctness)
+- difficult to test for serializabilty in practice
+  - factors such as system load, time of transaction submission, and process priority affect ordering of operations
+- most DBMS instead enforce protocols: set of rules to ensure serializabilty
+- testing a schedule for serializabilty after it has executed is a little too late!
+- the goal is to develop concurrency control protocols that will assure serializabilty
+  - will generally not examine the precedence graph as it is being created
+  - a protocol will impose a discipline that avoids non-serializable schedules
+- lock-based protocols
+  - we want to ensure that a concurrent execution of transactions is serializable
+  - the gist:
+    - require that items are accessed in a mutually exclusive manner
+    - if a transaction accesses one item, we require it to lock the item
+    - then, another transaction is allowed or not to access the same item depending on if (and how) it is locked by another transaction
+- data items can be locked in two modes
+  - ``shared(S)`` mode: if a transaction ``T``holds an ``S-lock`` for an item ``Q``, ``T`` is only allowed to read ``Q``
+  - ``exclusive(X)`` mode: if a transaction ``T`` holds an ``X-lock`` for an item ``Q``, ``T`` is allowed read and write ``Q``
+- lock requests are made to concurrency-control manager
+- any number of transactions can hold shared locks on an item, but if any transaction holds an exclusive on the item no other transaction may hold any lock on the item
+- a locking protocol is a set of rules followed by all transactions while requesting and releasing locks
+- a deadlock is a situation in which two or more transactions are waiting for one another to give up locks
+- the potential for deadlock exists in most locking protocols (deadlocks are a necessary evil)
+- locking as studied above does not guarantee serializabilty
+- two-phase locking
+  - this is a protocol which ensures conflict-serializable schedules
+  - phase 1: growing phase
+    - transaction may obtain locks
+    - transaction may not release locks
+  - phase 2: shrinking phase
+    - transaction may release locks
+    - transaction may not obtain locks
+  - two-phase locking does not ensure freedom from deadlocks
+  - cascading roll-back is possible under two-phase locking. To avoid this, follow a modified protocol called strict two-phase locking. Here a transaction must hold all its exclusive locks till it commits/aborts
 
 ### Recovery
-- committed transaction: effect recorded permanently in the database
-- aborted transaction: does not affect the database
 - types of transaction failures
   - computer failure (system crash)
   - transaction or system error
@@ -60,8 +113,9 @@ Readings:
   - concurrency control enforcement
   - disk failure
   - physical problems or catastrophes
-- system must keep sufficient information to recover quickly from the failure
-  - disk failure or other catastrophes have long recovery times
+- cascading rollback: a single transaction failure leads to a series of transaction rollbacks
+- cascadeless schedules: schedules for which cascading rollbacks cannot occur
+- system must keep sufficient information to recover quickly from the failure (disk failure or other catastrophes have long recovery times)
 - system must keep track of when each transaction starts, terminates, commits, and/or aborts
   - ``BEGIN_TRANSACTION``
   - ``READ`` or ``WRITE``
@@ -77,44 +131,3 @@ Readings:
   - undo and redo operations based on log possible
 - commit point of a transaction occurs when all operations that access the database have completed successfully
 - transaction writes a commit record into the log, if system failure occurs, can search for transactions with recorded ``start_transaction`` but no commit record
-
-### Desirable Properties of Transactions
-- ACID properties
-  - atomicity
-    - transaction performed in its entirety or not at all
-  - consistency preservation
-    - takes database from one consistent state to another (if we transfer money from ``A`` to ``B``, the consistency requirement is that ``A+B`` remains the same)
-  - isolation
-    - not interfered with by other transactions
-  - durability or permanency
-    - changes must persist in the database
-
-### Characterizing Schedules Based on Recoverability
-- schedule or history
-  - sequences that indicate the chronological order in which instructions of concurrent transactions are executed
-  - operations from different transactions can be interleaved in the schedule
-- total ordering of operations in a schedule
-  - for any two operations in the schedule, one must occur before the other
-
-### Characterizing Schedules Based on Serializabilty
-- serializable schedules: always considered to be correct when concurrent transactions are executing
-  - in a serial schedule instructions of transactions are not interleaved; one transaction is executed completely before the other
-- places simultaneous transactions in series
-  - transaction ``T1`` before ``T2``, or vice versa
-- problem with serial schedules
-  - limit concurrency by prohibiting interleaving of operations
-  - unacceptable in practice
-  - solution: determine which schedules are equivalent to a serial schedule and allow those to occur
-- serializable schedule of ``n`` transactions
-  - equivalent to some serial schedule of same ``n`` transactions
-- conflict equivalence: relative order of any two conflicting operations is the same in both schedules
-- serializable schedules
-  - schedule ``S`` is serializable if it is conflict equivalent to some serial schedule ``S'``
-- precedence graph: a directed graph where the vertices are the transactions (names)
-  - A schedule is conflict serializable if and only if its precedence graph is acyclic.
-- being serializable is different from being serial
-- serializable schedule gives benefit of concurrent execution (without giving up any correctness)
-- difficult to test for serializabilty in practice
-  - factors such as system load, time of transaction submission, and process priority affect ordering of operations
-- DBMS enforces protocols
-  - set of rules to ensure serializabilty
