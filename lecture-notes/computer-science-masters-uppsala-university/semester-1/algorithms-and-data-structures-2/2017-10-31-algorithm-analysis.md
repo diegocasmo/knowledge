@@ -6,9 +6,6 @@ Slides: [http://www.cs.princeton.edu/~wayne/kleinberg-tardos/pdf/02AlgorithmAnal
 
 Instructions:
   - ``02AlgorithmAnalysis.pdf``
-  - slides 1-11 of ``05DivideAndConquerI.pdf``
-  - ``05DemoMerge.pdf``
-  - slides 1-12 & 25-37 of ``05DivideAndConquerII.pdf``
 
 ### Computational Tractability
 - asymptotic analysis is the study of how the running time of an algorithm increases with the size of the input in the limit
