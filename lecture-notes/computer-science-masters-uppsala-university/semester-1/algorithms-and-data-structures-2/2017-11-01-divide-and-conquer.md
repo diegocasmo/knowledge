@@ -9,10 +9,7 @@ Instructions:
   - ``05DemoMerge.pdf``
 
 ### Divide-and-conquer
-- the gist
-  - divide up problem into several subproblems of the same kind
-  - solve each problem recursively
-  - combine solutions to subproblems into overall solution
+- break up a problem into independent subproblems, solve each subproblem, and combine solutions to subproblems to form a solution to original problem
 - most common usage
   - divide problem of size ``n`` into two subproblems of size ``n/2`` in linear time
   - solve two subproblems recursively
