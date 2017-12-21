@@ -4,6 +4,10 @@ Readings: CLRS3 Chapter 26, except Sections 26.4 and 26.5
 
 Slides: [http://www.cs.princeton.edu/~wayne/kleinberg-tardos/pdf/07NetworkFlowI.pdf](http://www.cs.princeton.edu/~wayne/kleinberg-tardos/pdf/07NetworkFlowI.pdf)
 
+Instructions
+- Slides 1-49 & 64-68 of ``07NetworkFlowI.pdf``; ``07DemoFordFulkerson.pdf``; ``07DemoFordFulkersonPathological.pdf``
+- slides 1-11 & 15-17 & 20-37 (without the proofs) of ``07NetworkFlowII.pdf`` and self-study its slides 38-73 if you are interested
+
 ### Maximum Flow
 - a flow network is a tuple ``G = (V, E, s, t, c)``
   - digraph ``(V, E)`` with source ``s ∈ V`` and sink ``t ∈ V``

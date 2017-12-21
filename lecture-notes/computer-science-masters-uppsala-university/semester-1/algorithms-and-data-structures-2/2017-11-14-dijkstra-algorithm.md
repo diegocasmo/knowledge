@@ -4,6 +4,9 @@ Readings: CLRS3 Chapter 24: pages 643-650 and Section 24.3 (we only study Dijkst
 
 Slides: [http://www.cs.princeton.edu/~wayne/kleinberg-tardos/pdf/04GreedyAlgorithmsII.pdf](http://www.cs.princeton.edu/~wayne/kleinberg-tardos/pdf/04GreedyAlgorithmsII.pdf)
 
+Instructions
+- Slides 1-12 of ``04GreedyAlgorithmsII.pdf``; ``04DemoDijkstra.pdf``
+
 ### Dijkstra's Algorithm
 - shortest path problem
   - given a digraph ``G = (V, E)``, edge lengths ``e ≥ 0``, source ``s ∈ V``, and destination ``t ∈ V``, find a shortest directed path from ``s`` to ``t``

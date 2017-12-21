@@ -4,6 +4,9 @@ Readings: CLRS3 Chapter 21, except Sections 21.2 and 21.4
 
 Slides: [http://www.cs.princeton.edu/~wayne/kleinberg-tardos/pdf/UnionFind.pdf](http://www.cs.princeton.edu/~wayne/kleinberg-tardos/pdf/UnionFind.pdf)
 
+Instructions
+- Slides 1-42 & 46 of ``UnionFind.pdf``
+
 ### Disjoint-sets Data Type
 - original motivation: compiling ``EQUIVALENCE``, ``DIMENSION``, and ``COMMON`` statements in Fortran
 - support three operations on a collection of disjoint sets

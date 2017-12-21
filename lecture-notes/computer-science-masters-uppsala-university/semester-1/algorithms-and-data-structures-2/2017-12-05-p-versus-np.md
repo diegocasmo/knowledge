@@ -4,6 +4,9 @@ Readings: CLRS3 Chapter 34
 
 Slides: [http://user.it.uu.se/~pierref/courses/AD2/slides/34-PversusNP.pdf](http://user.it.uu.se/~pierref/courses/AD2/slides/34-PversusNP.pdf)
 
+Instructions
+- ``34.pdf``
+
 ### Introduction
 - informal definition
   - P = class of problems that need no search to be solved

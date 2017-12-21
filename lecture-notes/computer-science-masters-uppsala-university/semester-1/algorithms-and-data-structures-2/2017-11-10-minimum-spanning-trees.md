@@ -4,6 +4,9 @@ Readings: CLRS3 Chapter 23 (we only study Prim's algorithm)
 
 Slides: [http://www.cs.princeton.edu/~wayne/kleinberg-tardos/pdf/04GreedyAlgorithmsII.pdf](http://www.cs.princeton.edu/~wayne/kleinberg-tardos/pdf/04GreedyAlgorithmsII.pdf)
 
+Instructions
+- Slides 15 & 17 & 20-24 & 26 & 33-35 & 45 of ``04GreedyAlgorithmsII.pdf``; ``04DemoPrim.pdf``
+
 ### Minimum Spanning Trees (MST)
 - a ``path`` is a sequence of edges which connects a sequence of nodes
 - a ``cycle`` is a path with no repeated nodes or edges other than the starting and ending nodes
