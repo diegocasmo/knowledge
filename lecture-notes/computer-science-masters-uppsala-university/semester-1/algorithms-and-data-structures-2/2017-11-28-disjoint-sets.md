@@ -32,11 +32,11 @@ Instructions
   - allocate an array ``parent[]`` of length ``n`` (must know number of elements ``n`` a priori)
   - ``parent[i] = j`` means parent of element ``i`` is element ``j``
 
-### Naïve Linking (pseudo-code in slides)
+### Naïve Linking
 - link root of first tree to root of second tree
 - using naïve linking, a ``UNION`` or ``FIND`` operation can take ``Θ(n)`` time in the worst case, where ``n`` is the number of elements (in the worst case, ``FIND`` takes time proportional to the height of the tree)
 
-### Link-By-Size (pseudo-code in slides)
+### Link-By-Size
 - maintain a tree size (number of nodes) for each root node
 - link root of smaller tree to root of larger tree (breaking ties arbitrarily)
 - using link-by-size, for every root node ``r`` : ``size[r] ≥ 2^height(r)``
@@ -45,7 +45,7 @@ Instructions
   - by the previous property, the height is ``≤ ⎣lg n⎦`` (base 2)
   - the ``UNION`` operation takes ``O(1)`` time except for its two calls to ``FIND``
 
-### Link-By-Rank (pseudo-code in slides)
+### Link-By-Rank
 - maintain an integer rank for each node, initially ``0``
 - link root of smaller rank to root of larger rank; if tie, increase rank of new root by ``1``
 - properties
@@ -61,7 +61,7 @@ Instructions
   - 6) for any integer ``k ≥ 0``, there are ``≤ n / 2^k`` nodes with rank ``k``
 - using link-by-rank, any ``UNION`` or ``FIND`` operation takes ``O(log n)`` time in the worst case, where ``n`` is the number of elements
 
-### Path Compression (pseudo-code in slides)
+### Path Compression
 - when finding the root ``r`` of the tree containing ``x``, change the parent pointer of all nodes along the path to point directly to ``r``
 - notice the ``FIND`` implementation changes the tree structure
 - path compression does not change the rank of a node; so ``height(x) ≤ rank[x]`` but they are not necessarily equal

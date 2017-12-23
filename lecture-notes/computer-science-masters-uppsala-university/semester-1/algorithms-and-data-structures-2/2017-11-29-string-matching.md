@@ -3,8 +3,8 @@
 Readings: CLRS3 Chapter 32, except Sections 32.3 and 32.4
 
 Slides
-  - [http://user.it.uu.se/~pierref/courses/AD2/slides/32-StringMatching-A.pdf](http://user.it.uu.se/~pierref/courses/AD2/slides/32-StringMatching-A.pdf)
-  - [http://user.it.uu.se/~pierref/courses/AD2/slides/32-StringMatching-B.pdf](http://user.it.uu.se/~pierref/courses/AD2/slides/32-StringMatching-B.pdf)
+- [http://user.it.uu.se/~pierref/courses/AD2/slides/32-StringMatching-A.pdf](http://user.it.uu.se/~pierref/courses/AD2/slides/32-StringMatching-A.pdf)
+- [http://user.it.uu.se/~pierref/courses/AD2/slides/32-StringMatching-B.pdf](http://user.it.uu.se/~pierref/courses/AD2/slides/32-StringMatching-B.pdf)
 
 Instructions
 - Slides 1-14 & 27 of ``32A.pdf``; ``32B.pdf``

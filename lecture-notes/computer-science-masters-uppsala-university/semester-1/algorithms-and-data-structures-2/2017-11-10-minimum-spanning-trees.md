@@ -12,7 +12,6 @@ Instructions
 - a ``cycle`` is a path with no repeated nodes or edges other than the starting and ending nodes
 - a ``cut`` is a partition of the nodes into two nonempty subsets ``S`` and ``V-S``
 - the ``cutset`` of a cut ``S`` is the set of edges with exactly one endpoint in ``S``
-- a cycle and a cutset intersect in an even number of edges
 - spanning tree:
   - let ``H=(V,T)`` be a subgraph of an undirected graph ``G=(V,E)``
   - ``H`` is a spanning tree of ``G`` if ``H`` is both acyclic and connected
@@ -27,7 +26,7 @@ Instructions
     - ``H`` has a unique simple path between every pair of nodes
 - minimum spanning tree (MST)
   - given a connected, undirected graph ``G=(V,E)`` with edge costs ``c_e``, a minimum spanning tree ``(V,T)`` is a spanning tree of ``G`` such that the sum of the edge costs in ``T`` is minimized
-  - notice there are ``n^(n–2)`` spanning trees of complete graph on ``n`` vertices (computationally expensive by brute force)
+  - notice there are ``n^(n–2)`` spanning trees of in a complete graph of ``n`` vertices (computationally expensive by brute force)
 - fundamental cycle
   - let ``H=(V,T)`` be a spanning tree of ``G=(V,E)``
   - adding any non-tree edge ``e ∈ E`` to ``T`` forms unique cycle ``C``

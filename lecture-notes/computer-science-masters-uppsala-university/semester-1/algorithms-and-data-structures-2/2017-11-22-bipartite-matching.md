@@ -4,6 +4,9 @@ Readings: CLRS3 Chapter 26, except Sections 26.4 and 26.5
 
 Slides: [http://www.cs.princeton.edu/~wayne/kleinberg-tardos/pdf/07NetworkFlowII.pdf](http://www.cs.princeton.edu/~wayne/kleinberg-tardos/pdf/07NetworkFlowII.pdf)
 
+Instructions
+- slides 1-11 & 15-17 & 20-37 (without the proofs) of ``07NetworkFlowII.pdf`` and self-study its slides 38-73 if you are interested
+
 ### Bipartite Matching
 - given an undirected graph ``G = (V, E)`` a subset of edges ``M ⊆ E`` is a matching if each node appears in at most one edge in ``M``.
   - max matching: given a graph, find a max-cardinality matching

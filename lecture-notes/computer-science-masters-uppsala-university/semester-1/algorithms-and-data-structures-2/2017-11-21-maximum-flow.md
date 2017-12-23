@@ -6,7 +6,6 @@ Slides: [http://www.cs.princeton.edu/~wayne/kleinberg-tardos/pdf/07NetworkFlowI.
 
 Instructions
 - Slides 1-49 & 64-68 of ``07NetworkFlowI.pdf``; ``07DemoFordFulkerson.pdf``; ``07DemoFordFulkersonPathological.pdf``
-- slides 1-11 & 15-17 & 20-37 (without the proofs) of ``07NetworkFlowII.pdf`` and self-study its slides 38-73 if you are interested
 
 ### Maximum Flow
 - a flow network is a tuple ``G = (V, E, s, t, c)``
@@ -21,7 +20,7 @@ Instructions
   - the value of a flow ``f`` is equal to the flow out of a vertex ``-`` incoming flow into the vertex
   - max-flow problem: find a flow of maximum value
 
-### Ford–Fulkerson algorithm
+### Ford–Fulkerson Algorithm
 - greedy algorithm
   - start with ``f(e) = 0`` for each edge ``e ∈ E``
   - find an ``s↝t`` path ``P`` where each edge has ``f(e) < c(e)``
@@ -46,7 +45,7 @@ Instructions
   - the bottleneck capacity of an augmenting path ``P`` is the minimum residual capacity of any edge in ``P``
   - key property: let ``f`` be a flow and let ``P`` be an augmenting path in ``G_f``. Then, after calling ``AUGMENT``, the resulting ``f'`` is a flow and ``val(f') = val(f) + bottleneck(G_f, P)``
 
-### Max-flow min-cut theorem
+### Max-Flow Min-Cut Theorem
 - relationship between flows and cuts
   - let ``f`` be any flow and let ``(A, B)`` be any cut. Then, the value of the flow ``f`` equals the net flow across the cut ``(A, B)``
   - let ``f`` be any flow and ``(A, B)`` be any cut. Then, ``val(f) ≤ cap(A, B)``
@@ -56,7 +55,7 @@ Instructions
 - augmenting path theorem: a flow ``f`` is a max flow iff no augmenting paths
 - max-flow min-cut theorem: value of a max ``flow = capacity`` of a min cut
 
-### Capacity-scaling algorithm
+### Capacity-Scaling Algorithm
 - analysis of Ford–Fulkerson algorithm (when capacities are integral)
   - capacities are integers between 1 and ``C``
   - throughout the algorithm, the flows ``f(e)`` and the residual capacities ``c_f(e)`` are integers
@@ -83,7 +82,7 @@ Instructions
     - maintain scaling parameter ``Δ``
     - let ``G_f(Δ)`` be the part of the residual network consisting of only those arcs with capacity ``≥ Δ``
 
-### Shortest augmenting paths
+### Shortest Augmenting Paths
 - which augmenting path to select?
   - the one with the fewest edges (can be found via BFS)
 - throughout the algorithm, the length of a shortest augmenting
