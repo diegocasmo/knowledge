@@ -8,3 +8,4 @@ Applications of AI, for instance in computer games.
   - [Basic & Local Search](0-basic-local-seach.md)
   - [Heuristic & Competitive Search](1-heuristic-&-competitive-search.md)
   - [Planning](2-planning.md)
+  - [Scheduling](3-scheduling.md)
