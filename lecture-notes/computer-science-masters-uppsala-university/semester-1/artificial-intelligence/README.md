@@ -5,5 +5,6 @@ Heuristic search, knowledge representation, expert systems, learning systems.
 Applications of AI, for instance in computer games.
 
 ### Notes
-  - [Basic & Local Search](2017-08-29-basic-local-seach.md)
-  - [Heuristic & Competitive Search](2017-08-30-heuristic-&-competitive-search.md)
+  - [Basic & Local Search](0-basic-local-seach.md)
+  - [Heuristic & Competitive Search](1-heuristic-&-competitive-search.md)
+  - [Planning](2-planning.md)
