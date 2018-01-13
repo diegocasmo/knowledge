@@ -11,3 +11,4 @@ Applications of AI, for instance in computer games.
   - [Scheduling](3-scheduling.md)
   - [Markov Models](4-markov-models.md)
   - [Directed Graphical Models & MCMC](5-directed-graphical-models-&-mcmc.md)
+  - [Neural Nets, CNNs & FCN, RNN & AE](6-neural-nets-cnns-&-fcn-rnn-&-ae.md)
