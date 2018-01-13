@@ -1,0 +1,56 @@
+# Lecture: Learning From Nature - Guest Lecture
+
+### Learning From Nature
+- natural computation
+  - using computers to model/simulate natural phenomena
+    - to learn more about these phenomena
+    - to learn new ways to solve computational problems
+    - to learn how to build computation devices from biological material
+- what is learning?
+  - the ability to improve over time based on experience
+- three forms of learning
+  - supervised
+  - reinforcement
+  - unsupervised
+- techniques
+  - artificial neural networks (ANN)
+    - inspired by biological nervous systems
+    - based on very simple models of biological neurons and synaptic connections
+    - a network of nodes that stores information in the weights, trained by adjusting those weights (for instance, using back propagation with gradient descent)
+    - can generalize to unseen data
+    - example problems
+      - image classification
+      - video classification
+      - regression
+  - reinforcement learning (RL)
+    - inspired by psychology, ethology and behaviorism
+    - learning by trial-and-error
+    - reward: an evaluation of the environmental state
+    - goal: to make decisions that maximize the long term reward
+    - example problems
+      - autonomous robots
+      - controlling elevators in an office building
+      - resource allocation in computer networks
+  - evolutionary computing (EC)
+    - inspired by genetics, natural selection and evolution
+    - used to for learning problems where the task is to maximize some measure of success (fitness)
+    - the 'evolution' is controlled, so it’s more like breeding
+    - genotype
+      - the solution to the problem is encoded in the individual’s genotype
+      - in genetic algorithms —> a string
+      - in genetic programming —> a computer program
+      - in evolutionary programming —> a representation of a state machine
+    - example problems
+      - automated design
+      - scheduling
+      - games
+  - swarm intelligence
+    - inspired by social animals
+    - distributed systems without central control, useful not only to simulate, but also to solve optimization problems
+    - particle swarm optimization
+      - originally intended to simulate bird flocks and to model social interaction, but stands on its own as an optimization tool
+    - ant colony optimization
+      - family of combinatorial optimization algorithms, based on ant behavior (traveling salesman problem, scheduling, network routing)
+      - stigmergy: Indirect communication and coordination, by local modification and sensing of the environment
+    - cellular automata
+      - massively parallel system of identical communicating state machine (cells). Used to animate/model fluids, gases, and bacteria.
