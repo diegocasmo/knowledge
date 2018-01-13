@@ -10,3 +10,4 @@ Applications of AI, for instance in computer games.
   - [Planning](2-planning.md)
   - [Scheduling](3-scheduling.md)
   - [Markov Models](4-markov-models.md)
+  - [Directed Graphical Models & MCMC](5-directed-graphical-models-&-mcmc.md)
