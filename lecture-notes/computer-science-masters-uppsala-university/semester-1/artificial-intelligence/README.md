@@ -9,3 +9,4 @@ Applications of AI, for instance in computer games.
   - [Heuristic & Competitive Search](1-heuristic-&-competitive-search.md)
   - [Planning](2-planning.md)
   - [Scheduling](3-scheduling.md)
+  - [Markov Models](4-markov-models.md)

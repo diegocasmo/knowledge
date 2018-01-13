@@ -1,6 +1,6 @@
 # Lecture: Scheduling
 
-Readings: Ch. 4 & 5, Russell, Stuart Jonathan; Norvig, Peter Artificial Intelligence: A Modern Approach 3
+Readings: Ch. 11, Russell, Stuart Jonathan; Norvig, Peter Artificial Intelligence: A Modern Approach 3
 
 ### Scheduling
 - when to do required actions (given required resources)

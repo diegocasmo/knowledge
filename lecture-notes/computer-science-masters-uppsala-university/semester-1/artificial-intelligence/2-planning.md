@@ -1,6 +1,6 @@
 # Lecture: Planning
 
-Readings: Ch. 4 & 5, Russell, Stuart Jonathan; Norvig, Peter Artificial Intelligence: A Modern Approach 3
+Readings: Ch. 10, Russell, Stuart Jonathan; Norvig, Peter Artificial Intelligence: A Modern Approach 3
 
 ### Planning
 - PDDL: planning domain definition language
