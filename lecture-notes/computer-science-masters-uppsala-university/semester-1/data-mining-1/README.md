@@ -7,3 +7,4 @@ Introduction to data mining, its terminology and overview over various types of 
   - [Data](0-data.md)
   - [Comparing Objects](1-comparing-objects.md)
   - [Classification](2-classification.md)
+  - [Clustering](3-clustering.md)
