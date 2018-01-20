@@ -1,7 +1,5 @@
 # Lecture: Caches and VM
 
-Readings: CLRS3 Chapter 3
-
 ### What Is A Cache?
 - motivation behind caches is to avoid accessing data directly from the memory as it is slow
 - a direct-mapped cache has one entry per page (does not provide good uniform distribution of data)
@@ -58,3 +56,99 @@ Readings: CLRS3 Chapter 3
   - compulsory miss (touching data for the first time)
   - capacity miss (the cache is too small)
   - conflict misses (non-ideal cache implementation)
+
+### Cache Size and Lines
+- cache size refers to the size of the data it can the cache can store
+- a larger cache size can help avoiding capacity misses
+- cache line is the smallest unit of memory than can be transferred between the main memory and the cache
+- temporal locality refers to the likelihood of accessing the same data again soon
+- spatial locality refers to the likelihood of accessing nearby data soon
+- spatial locality is explored by large cache lines
+- using a larger cache line can help avoiding compulsory misses
+- for a small cache a smaller cache line is better
+- for a large cache a larger cache line is better
+
+### Associativity
+- two-way associative cache
+  - cache is made up of sets that can fit two blocks each
+  - the index is used to find the set, and the tag helps find the block within the set
+- pros
+  - avoid conflict misses
+- cons
+  - slower access time
+  - more complex implementation comparators, muxes, ...
+  - higher dynamic power consumption
+- fully associative cache
+  - no index is needed since a cache block can go anywhere in the cache
+  - every tag must be compared when finding a block in the cache, but block placement is very flexible
+  - very expensive
+  - only used for small caches
+- associative caches remove conflict misses
+
+### Optimizing Caches
+- how to choose which cache to replace?
+  - least-recently used (LRU) algorithm
+    - throw out the longest unused cache line
+    - requires to keep more information to maintain a history about the sets
+    - implementing a true LRU replacement for highly associative caches is expensive
+  - not most recently used
+    - remember who used it last
+  - pseudo-LRU
+    - based on course time stamps
+  - random replacement
+- handling dirty cache lines
+  - write-back caches
+    - a 'dirty bit' per cache line indicates an altered cache line
+    - write data back to memory at replacement, called write-back
+  - write-through
+    - always write through to memory
+    - data will never by dirty
+    - no write-backs
+- power consumption
+  - static power or leakage power
+    - current leaks through transistors
+    - proportional to the number of transistors used
+    - proportional to cache capacity
+  - dynamic power
+    - extra energy needed to read SRAMs bits
+    - proportional to the number of SRAM bits read
+  - which power dominates?
+    - associative and fast first-level cache (L1) cache: dynamic
+    - large slower cache last-level cache (LLC): static
+- L1 caches are implemented as fast-cache and sometimes have smaller cache lines than L2
+- L3 caches consumption is dominated by static power and are often shared by many CPUs (cores)
+- the hardware pre-fetcher tries to anticipate what data is going to be accessed next
+  - improves memory-level parallelism MLP
+- sequential pre-fetching
+  - sequential streams to a  page
+  - some number of pre-fetch streams supported
+  - often only for L2 and L3
+- PC-based pre-fetching
+  - detects strides from te same PC
+  - often for L1 caches
+- adjacency pre-fetching
+  - on a miss, also bring in the neighboring cache line
+  - often only for L2 and L3
+- cache line: data chunk move to/from a cache
+- cache set: fraction of the cache identified by the index
+- associativity: number of alternative storage places for a cache line
+- replacement policy: picking the victim to throw out from a set (LRU/Random/Nehalem)
+- temporal locality: likelihood to access the same data again soon
+- spatial locality: likelihood to access nearby data again soon
+- how much to replicate data among the different cache levels?
+  - inclusive
+    - install a copy of the data in L1 and keep the data in L2
+    - when the L2 data is replaced, force eviction from L1
+    - if the data is not in L2, it is not in L1 either
+  - non-inclusive
+    - install a copy of the data in L1 and keep the data in L2
+    - when the L2 data is replaced, L1 data survives
+    - if the data is not in L2, it may be in L1
+  - exclusive
+    - move the data from L2 to L1
+    - at L1 replacement, move the data back to L2
+    - data is either in L1 or L2, but never in both
+- a victim cache can help reduce the number of conflict misses
+- sub-blocking lowers the memory overhead and avoids problems with false sharing
+- sub-blocking will not explore as much spatial locality, and still poor utilization of SRAM (fewer sparse 'things' allocated)
+- skewed-associative cache reads fewer bits from the SRAM on a cache lookup (dynamic energy)
