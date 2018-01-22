@@ -152,3 +152,46 @@
 - sub-blocking lowers the memory overhead and avoids problems with false sharing
 - sub-blocking will not explore as much spatial locality, and still poor utilization of SRAM (fewer sparse 'things' allocated)
 - skewed-associative cache reads fewer bits from the SRAM on a cache lookup (dynamic energy)
+
+### Memory
+- DRAM (dynamic random access memory)
+  - 1 transistor/bit
+  - error prone and slow
+  - refresh and pre-charge overhead and complexity
+  - may require error detection and correction
+  - organization in rows and columns
+    - need to supply the RAS (row address strobe) and CAS (column address strobe)
+  - periodic 'refresh' of memory cells
+  - reading out the first piece of data is slow (other data from the same line is 'streamed')
+  - spatial locality in accesses make DRAM perform faster on average
+- SRAM (static random access memory)
+  - about 4-6 transistors/bit (faster to access)
+- big v.s. little endian
+  - big endian: the most significant byte of the data is placed at the byte with the lowest address
+  - little endian: the least significant bye of the data is placed ad the byte with the lowest address
+
+### Virtual Memory System
+- an address space is divided into segments
+  - text segment stores instructions
+  - data segment stores static data
+  - heap segment is data dynamically allocated by the program
+- there's no index function, so it can be thought as a fully associative cache
+- multi-level translation table is used to reduce the storage requirement for the page table
+- a page table entry (PTE) contains protection attribute
+- translation look-aside buffer (TLB)
+  - caches recent address translations
+  - contains protection attribute bits
+- aliasing problem with virtual caches
+  - the same physical page may be accessed using different virtual addresses (aliasing)
+  - different physical addresses may be referred to by the same virtual address (homonymes)
+- virtually indexes physically tagged (VIPT)
+  - TLB is placed in parallel with the cache
+  - need to guarantee that all aliases have the same index
+- VM: replacement strategy
+  - FIFO: fist-in first-out
+  - approximation to LRU
+- VM: write strategy
+  - write back
+  - write through is impossible to use
+    - many small writes
+    - not enough bandwidth to disk
