@@ -18,3 +18,4 @@ Practical part
 The practical part consists of lab assignments and a project assignment. The subject of the project assignment is open for the students to define themselves, but must be approved before the work begins.
 
 ### Notes
+  - [The Artificial Neuron](2018-01-26-the-artificial-neuron.md)
