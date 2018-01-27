@@ -4,3 +4,4 @@
 NP-completeness. Advanced techniques in algorithm analysis and design such as amortised and probabilistic analysis, universal hashing, integer programming, simulated annealing, tabu serach, probabilistic satisfiability (SAT). Connections to modern research in algorithmics.
 
 ### Notes
+  - [Stochastic Local Search (SLS)](2018-01-16-stochastic-local-search.md)
