@@ -2,12 +2,23 @@
 
 ### What Is A Cache?
 - motivation behind caches is to avoid accessing data directly from the memory as it is slow
-- a direct-mapped cache has one entry per page (does not provide good uniform distribution of data)
+- in a direct mapped cache, a block has only one place it can appear in the cache (does not provide good uniform distribution of data)
+- in a fully associative cache, a block can be placed anywhere
+  - a fully associative cache has no index field
+- in a set associative cache, a block can be placed in a restricted set of places in the cache
+  - if there are ``n`` blocks in a set, the cache placement is called ``n``-way set associative
+  - direct mapped can be thought as a ``1``-way set associative
+  - a fully associative cache with ``m`` blocks could be called ``m``-way set associative
 - a cache is a small memory that is in-between the CPU and memory
 - before doing a lookup in memory, data is looked up in the cache
   - input to the cache is an address that would like to be looked at
   - cache will return data as well a signal 'hint' if the data can be trusted
   - if the signal 'hint' says the data cannot be trusted, then memory needs to be accessed to get the most up-to-date value and possibly update the cache
+- when the requested data is found in the cache, it is called a cache hit
+- if the requested data is not found on the cache, it is called a cache miss
+- the assigned cost per miss is called the miss penalty
+- the miss rate is the fraction of cache accesses that result in a miss (i.e., number of accesses that miss divided by number of accesses)
+- latency determines the time to retrieve the first word of a block, and bandwidth determines the time to retrieve the rest of this block
 
 ### Implementing Caches
 - ``k = 2^10``, ``b`` = bit, ``B`` = byte
@@ -97,13 +108,13 @@
     - based on course time stamps
   - random replacement
 - handling dirty cache lines
-  - write-back caches
-    - a 'dirty bit' per cache line indicates an altered cache line
-    - write data back to memory at replacement, called write-back
-  - write-through
+  - write-through: information is written to both the block in the cache and the block in the lower-level memory
     - always write through to memory
     - data will never by dirty
-    - no write-backs
+    - no write-backs (read misses never result in writes to the lower level)
+  - write-back caches: information is written only to the block in the cache. The modified cache block is written to main memory only when it is replaced
+    - a 'dirty bit' per cache line indicates an altered cache line
+    - write data back to memory at replacement, called write-back
 - power consumption
   - static power or leakage power
     - current leaks through transistors
@@ -171,6 +182,8 @@
   - little endian: the least significant bye of the data is placed ad the byte with the lowest address
 
 ### Virtual Memory System
+- virtual memory means some objects may reside on disk
+- an address space is broken into fixed-size blocks, called pages
 - an address space is divided into segments
   - text segment stores instructions
   - data segment stores static data
