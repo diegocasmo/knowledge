@@ -52,21 +52,15 @@
 - ``CPI = 1 - mem_ratio +
         mem_ratio * (hit_ratio * hit_time) +
         mem_ratio * (1 - hit_ratio) * miss_time``
-- how get more effective caches?
-  - larger cache (more capacity)
-  - cache block size (larger cache lines)
-  - more placement choice (more associativity)
-  - innovative caches (victim, skewed, ...)
-  - cache hierarchies (L1, L2, L3, CMR)
-  - latency-hiding (weaker memory models)
-  - latency-avoiding (pre-fetching)
-  - cache avoiding (cache bypass)
-  - optimized application/compiler
-  - ...
+- cache optimizations categories
+  - reducing the miss rate: larger block size, larger cache size, and higher associativity
+  - reducing the miss penalty: multilevel caches and giving reads priority over writes
+  - reducing the time to hit in the cache: avoid address translation when indexing the cache
 - why do you miss in a cache? (three C's)
   - compulsory miss (touching data for the first time)
   - capacity miss (the cache is too small)
   - conflict misses (non-ideal cache implementation)
+- compulsory misses are independent of cache size, while capacity misses decrease as capacity increases, and conflict misses decrease as associativity increases
 
 ### Cache Size and Lines
 - cache size refers to the size of the data it can the cache can store
@@ -182,8 +176,11 @@
   - little endian: the least significant bye of the data is placed ad the byte with the lowest address
 
 ### Virtual Memory System
-- virtual memory means some objects may reside on disk
+- the virtual memory divides the physical memory into blocks and allocates them to different processes
+  - virtual memory means some objects may reside on disk
+  - the processor produces virtual addresses that are translated by a combination of hardware and software to physical addresses, which access main memory
 - an address space is broken into fixed-size blocks, called pages
+- an address fault is analogous to a cache miss
 - an address space is divided into segments
   - text segment stores instructions
   - data segment stores static data

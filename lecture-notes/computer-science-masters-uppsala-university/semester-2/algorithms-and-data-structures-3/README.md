@@ -5,3 +5,4 @@ NP-completeness. Advanced techniques in algorithm analysis and design such as am
 
 ### Notes
   - [Stochastic Local Search (SLS)](2018-01-16-stochastic-local-search.md)
+  - [Fundamentals of Integer Programming](2018-01-17-fundamentals-of-integer-programming.md)
