@@ -70,8 +70,8 @@
 - spatial locality refers to the likelihood of accessing nearby data soon
 - spatial locality is explored by large cache lines
 - using a larger cache line can help avoiding compulsory misses
-- for a small cache a smaller cache line is better
-- for a large cache a larger cache line is better
+- small cache: smaller cache line is better
+- large cache: larger cache line is better
 
 ### Associativity
 - two-way associative cache
