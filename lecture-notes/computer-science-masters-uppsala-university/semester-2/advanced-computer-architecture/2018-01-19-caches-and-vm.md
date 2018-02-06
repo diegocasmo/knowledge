@@ -172,8 +172,8 @@
 - SRAM (static random access memory)
   - about 4-6 transistors/bit (faster to access)
 - big v.s. little endian
-  - big endian: the most significant byte of the data is placed at the byte with the lowest address
-  - little endian: the least significant bye of the data is placed ad the byte with the lowest address
+  - big endian: a word is saved starting from the most significant bit
+  - little endian: a word is saved starting from the least significant bit
 
 ### Virtual Memory System
 - the virtual memory divides the physical memory into blocks and allocates them to different processes
