@@ -20,3 +20,4 @@ The practical part consists of lab assignments and a project assignment. The sub
 ### Notes
   - [The Artificial Neuron](ch-2-the-artificial-neuron.md)
   - [Supervised Learning Neural Networks](ch-3-supervised-learning-neural-networks.md)
+  - [Reinforcement Learning](ch-6-reinforcement-learning.md)
