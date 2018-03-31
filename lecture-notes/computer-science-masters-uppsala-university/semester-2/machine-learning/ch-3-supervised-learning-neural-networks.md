@@ -8,21 +8,14 @@ Readings: Ch 3, Computational Intelligence: An Introduction, Andries P. Engelbre
 - feed forward neural networks (FFNN)
   - the output of a FFNN is computed with a single forward pass through the network
   - activation functions of a neural network do not need to all be the same
-- functional link neural network (FLNN)
-  - input units do implement activation functions
-  - a FLNN is a FFNN with the input layer expanded into a layer of functional high-order units
-  - the use of high-order combinations of input units may result in faster training times and improved accuracy
-- product unit neural networks (PUNN)
-  - computes the weighted product of input signals, instead of a weighted sum
+  - applications: classification, function approximation, perception
 - simple recurrent neural networks (SRNN)
   - has feedback connections which add the type ability to also learn the temporal characteristics of the data set
   - the previous state of the output layer then also serves as input to the network
-- time-delay neural networks (TDNN)
-  - TDNN are also refereed to as backpropagation through-time
-  - its input patterns are successively delayed in time
-- cascade networks
-  - is multilayer FFNN where all input units have direct connections to all hidden units and to all output units
-  - each hidden unit's output serves as an input to all succeeding hidden units and all output units
+  - applications: recognizing/generating sequences of patterns. linguistics. training: supervised
+- fully interconnected recurrent networks
+  - description: ??
+  - applications: associative memories, combinatorial optimization problems
 
 ### Supervised Learning Rules
 - the objective of learning is to approximate an unknown function using the given information
@@ -34,12 +27,18 @@ Readings: Ch 3, Computational Intelligence: An Introduction, Andries P. Engelbre
   - global optimization: the algorithm searches for the global optimum by employing mechanisms to search larger parts of the search space (simulated annealing)
 - learning consists of adjusting weights until an acceptable empirical error is reached
 - learning algorithms based on when weights are adjusted
-  - stochastic/online learning: weights are adjusted after each patter presentation (next input pattern is randomly selected from the training set)
-  - batch/offline learning: weight changes are accumulated and used to adjust weights only after training patterns have been presented
+  - stochastic/online learning: weights are adjusted after each pattern presentation (next input pattern is randomly selected from the training set)
+  - batch/offline learning: weight changes are accumulated and used to adjust weights only after training patterns have been presented (1 epoch)
+  - notes
+    - batch learning is the most correct, mathematically (theorems often assume this)
+    - pattern learning better in practice: non-determinism reduces risk of getting trapped in local minima (usually converges faster)
 - gradient descend optimization (backpropagation)
   - a learning iteration is referred to as an epoch has two phases
     - feed-forward pass: computes the output value(s) of the NN for each training pattern
     - backward propagation: propagates the error signal back from the output layer toward the input layer
+  - momentum
+    - common improvement: add a momentum term to the update formula, causing smoother weight changes over time (tendency to continue moving in the same
+direction as before, instead of turning back and forth)
 
 ### Functioning of Hidden Units
 - for classification, the task of hidden units if to form decision boundaries to separate different classes
@@ -51,3 +50,28 @@ Readings: Ch 3, Computational Intelligence: An Introduction, Andries P. Engelbre
   - learning starts from different points in the search space, and may converge at different minima
 - an ensemble network consists of a number of NNs all trained on the same dataset, using the same architecture and learning algorithm (this is the most basic form)
 - at convergence of the individual NN members, the results of the different NNs need to be combined to form one, final result (there are different approaches to do this)
+
+### The Perceptron As a Classifier
+- the discriminant can be found by setting output to 0
+- examples:
+  - ``AND(1, 1, 1.5)``
+  - ``OR(1, 1, 0.5)``
+  - ``NAND(-1, -1, -1.5)``
+  - ``NOR(-1, -1, -0.5)``
+- the weights defined the position and slope of the hyperplane
+- the perceptron convergence procedure
+  - ``Δw_i = n(d - y)x_i`` where ``y`` is the current output and ``d`` is the desired output
+    - ``n`` is the learning rate (step length)
+      - larger values may overshoot minima or zig-zag across ravines
+      - smaller values are slower and more likely to get stuck in local minima
+    - examples:
+      - ``d=y=0``, ``d - y = 0`` -> no change to the weight
+      - ``d=0``, ``y=1``, ``d - y = -1`` -> total is too large, make it smaller (weaken the connections)
+      - ``d=1``, ``y=0``, ``d - y = 1`` -> total is too small, make it larger (reinforce the connections)
+      - ``d=y=1``, ``d - y = 0`` -> no change to the weight
+  - the algorithm converges to an optimal discriminant in a finite number of steps, if such a discriminant exists (if it is linearly separable)
+    - limitations:
+      - XOR problem
+      - solutions:
+        - linearize the problem by increasing input dimensionality (e.g. an extra input which is given the AND function of the other two)
+        - combine perceptrons in several layers (input -> (OR and NAND) -> AND -> output)

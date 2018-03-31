@@ -17,6 +17,7 @@ Readings: Ch 2, Computational Intelligence: An Introduction, Andries P. Engelbre
   - sigmoid function: a continuous version of the ramp function
   - hyperbolic tangent
   - Gaussian function
+- a binary neuron is a neuron with a binary activation function (it may very well have more than 2 inputs)
 
 ### Artificial Neuron Geometry
 - a single neuron can be used to realize linearly separable functions without any error
@@ -27,6 +28,12 @@ Readings: Ch 2, Computational Intelligence: An Introduction, Andries P. Engelbre
 ### Artificial Neuron Learning
 - learning allows to automatically learn the value of the weights and the bias term
 - learning consists of adjusting weights and bias until a certain criterion is met
+- information is stored in the connections (weights), not in the nodes
+- ANN's are trained by modifying the weights, not programmed
+- ability to generalize, i.e. to work in situations slightly different than before (without retraining)
+- adaptivity, i.e. ability to adapt to new circumstances (by retraining)
+- parallelism
+- fault tolerance
 - three main types of learning
   - supervised learning: neuron is provided with a data set consisting of input vectors and a target associated with each input vector
   - unsupervised learning: aim is to discover patterns or features in the input data with no assistance from an external source
