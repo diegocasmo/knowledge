@@ -16,6 +16,10 @@ Readings: Ch 3, Computational Intelligence: An Introduction, Andries P. Engelbre
 - fully interconnected recurrent networks
   - description: ??
   - applications: associative memories, combinatorial optimization problems
+- multi-layer perceptron (MLP) notation N-M-K
+  - ``N`` inputs
+  - ``M`` hidden layers
+  - ``K`` outputs
 
 ### Supervised Learning Rules
 - the objective of learning is to approximate an unknown function using the given information
@@ -36,9 +40,13 @@ Readings: Ch 3, Computational Intelligence: An Introduction, Andries P. Engelbre
   - a learning iteration is referred to as an epoch has two phases
     - feed-forward pass: computes the output value(s) of the NN for each training pattern
     - backward propagation: propagates the error signal back from the output layer toward the input layer
-  - momentum
-    - common improvement: add a momentum term to the update formula, causing smoother weight changes over time (tendency to continue moving in the same
-direction as before, instead of turning back and forth)
+  - a common improvement: momentum
+    - add a momentum term to the update formula, causing smoother weight changes over time (tendency to continue moving in the same direction as before, instead of turning back and forth)
+- resilient backpropagation (RPROP)
+  - let the (accumulated) partial derivative decide the direction only (i.e. only consider its sign), not the step length
+  - if the partial derivative changes its sign, the weight update value is decreased by a factor ``η-`` (the last weight update was too large, causing the algorithm to jump over a local minimum)
+  - if the derivative retains its sign, the update value is increased by a factor of ``η+`` to accelerate convergence
+  - requires batch learning
 
 ### Functioning of Hidden Units
 - for classification, the task of hidden units if to form decision boundaries to separate different classes
