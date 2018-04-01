@@ -34,7 +34,7 @@ Readings: Ch 7, Computational Intelligence: An Introduction, Andries P. Engelbre
     - computationally expensive
     - variance is usually high
 - dropout
- - at each training stage, individual nodes are either 'dropped out' of the net with probability ``1 − p`` or kept with probability ``p``, so that a reduced network is left; incoming and outgoing edges to a dropped-out node are also removed. Only the reduced network is trained on the data in that stage. The removed nodes are then reinserted into the network with their original weights
+  - at each training stage, individual nodes are either 'dropped out' of the net with probability ``1 − p`` or kept with probability ``p``, so that a reduced network is left; incoming and outgoing edges to a dropped-out node are also removed. Only the reduced network is trained on the data in that stage. The removed nodes are then reinserted into the network with their original weights
 - the number of training examples should be much larger than the number of weights (``2N...N^2``)
 
 ### Performance Factors
@@ -75,3 +75,55 @@ Readings: Ch 7, Computational Intelligence: An Introduction, Andries P. Engelbre
 - note: the ability to represent a function is not a guarantee that this function can be found by training (the required number of hidden nodes may be greater in practice than in theory)
 - ANNs for classification should have sigmoid outputs, while ANNs for functions approximation should have linear outputs
   - a linear output is required for function approximation since we do not know the range of the target function, and even if we do it is unlikely that the range happens to be the usual sigmoid [0, 1]. A function approximator should be able to output any value.
+
+### Architecture Selection
+- the goal is to minimize the number of hidden nodes (less parameters) better generalization
+  - less over-training, faster recall, faster training
+  - if several networks fit the training set equally well, then the simplest network will on average give the best generalization performance
+- two approaches
+  - start with a large net and prune
+  - start with a small net and extend
+- regularization
+  - addition of a penalty term to the objective function to be minimized ``E = Et + λ*Ec``
+  - where ``Et`` is the usual measure of data error, and ``Ec`` is a penalty term, penalizing network complexity (network size)
+  - the constant ``λ`` controls the influence of the penalty term
+  - weight decay
+    - an instance of a regularization method
+    - the network cuts unnecessary connections automatically
+    - let each weight strive to zero. only the most important weights will stay up
+- network construction (growing)
+  - network construction algorithms start training with a small network and incrementally add hidden units during training when the network is trapped in a local minimum
+  - the upstart algorithm (only for classification)
+    - an instance of a network construction growing algorithm
+    - an output node in a classifier network can make two types of mistakes
+      - ``E+``: The node's value is 1, when it should be 0
+      - ``E-``: The node's value is 0, when it should be 1
+    - for each output node, create two daughter nodes, ``x+`` and ``x-``, separately trained to recognize the cases where the parent node make mistakes of type ``E+`` and ``E-``, respectively
+      - ``x+`` is connected to the parent node with a large negative weight
+      - ``x-`` is connected to the parent node with a large positive weight
+    - if the daughters cannot solve this task, let them create their own daughters, etc
+- network pruning
+  - start with an over-sized network and remove unnecessary network parameters, either during training or after convergence to a local minimum
+  - the decision to prune a network parameter is based on some measure of parameter relevance or significance
+
+### Second Order Methods
+- use second order information to guess where the minimum is, then jump directly there
+- example: quickprop
+  - requires batch learning
+  - for every weight ``w_ji`` assume that
+    - the error surface can be approximated locally by a parabola
+    - the change in the slope from the previous step is only due to ``w_ji``
+  - given this, the current and previous slope together with the latest weight change can be used to define a parabola -> jump directly to the minimum of that
+  - sensitive to choice of parameters, but can be be extremely fast
+- no free lunch theorem
+  - averaged over all possible learning problems, no learning algorithm is better than any other
+  - implication
+    - there is always a catch: all modifications that seem to make things better, must have a drawback
+    - if your algorithm is worse than another on a subset of problems, you also know that there is another subset for which your algorithm is better (but is it an interesting subset?)
+
+### Multi-task Learning
+- have additional data which we think could help the networks
+- extra info can make network dependent on it
+- instead, add it as an extra output
+- this restricts the freedom of the hidden layer, i.e. the number of models the network can form of the target function.
+- results in faster training, better generalization (in practice, not guaranteed), less variance in both training time and results
