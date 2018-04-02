@@ -42,7 +42,7 @@ Readings: Ch 7, Computational Intelligence: An Introduction, Andries P. Engelbre
   - missing values
     - remove the entire pattern if it has a missing value (reduces available information for training and important information may be lost)
     - replace each missing value with the average value (continuous values) or most frequently occurring value (nominal or discrete values)
-- an outlier is a patter that deviates substantially from the data distribution
+- an outlier is a pattern that deviates substantially from the data distribution
   - outliers result in large errors, and consequently large weight updates
 - scaling and normalization: while it is not necessary to scale input values, performance can be improve if inputs are spaced to the active domain of the activation functions
 - noise injection: add a small amount of noise to the input values every time an input pattern is presented to the learning system, so that the patterns never look quite the same. It forces the learning system to find more general representations.
