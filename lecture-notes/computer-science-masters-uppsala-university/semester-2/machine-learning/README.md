@@ -22,3 +22,4 @@ The practical part consists of lab assignments and a project assignment. The sub
   - [Supervised Learning Neural Networks](ch-3-supervised-learning-neural-networks.md)
   - [Reinforcement Learning](ch-6-reinforcement-learning.md)
   - [Performance Issues (Supervised Learning)](ch-7-performance-issues.md)
+  - [Unsupervised Learning Neural Networks](ch-4-unsupervised-learning-neural-networks.md)
