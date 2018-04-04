@@ -27,6 +27,12 @@ Readings: Ch 4, Computational Intelligence: An Introduction, Andries P. Engelbre
   - standard competitive learning rule
     - ``∆wk = η(x−wk)`` = ``η(x_i − w_{ki})`` ,``1≤i≤N``
     - only the winner is moved
+  - CL with bad (random) initialization
+    - nodes which are never used (no data in that Voronoi region)
+    - nodes which cover more than one cluster, and therefore moves back and forth between them
+  - CL initialized from the data
+    - better coverage, all nodes are used
+    - but still not optimal, unless we're very lucky (bad distribution of nodes)
 - competitive learning + batch learning = K-means
 - the winner-takes-all problem: if a single node wins a lot, it may become invincible
   - solutions
@@ -55,3 +61,40 @@ Readings: Ch 4, Computational Intelligence: An Introduction, Andries P. Engelbre
       - to decide the exact location and form of the classes
       - start with low value of ``η``
       - about ``10x`` longer training time than in the ordering phase
+  - SOFM forms a density function of the data. For example, uniformly distributed input data leads to uniformly distributed weight vectors
+
+### Growing Neural Gas (GNG)
+- unsupervised growing algorithm for clustering
+- dynamic size (a growing/shrinking algorithm)
+  - though it grows faster than it shrinks
+- dynamic neighborhood (who is neighbor to whom is not fixed)
+  - defined by a graph
+  - not weighted connections, just edges in a graph
+- all parameters are constant
+  - great for on-line learning and for following moving targets
+- which nodes to move (given an input), and by how much?
+  - move not only the winner (``k``), but also its (current) neighbors
+  - the winner is moved using a much greater gain factor than the neighbors (``εk >>εn``)
+    - ``∆wk = εk(x−wk)``
+    - ``∆wn = εn(x−wn)``
+    - where ``k`` is the winner, ``n`` is a neighbor, ``x`` is the input vector and ``w`` is the node position (its weight vector)
+    - both gain factors are constant
+- how to define and update the neighborhood graph?
+  - all current neighbors are connected by edges in a graph
+  - each edge has an associated age
+  - for each input vector
+    - find the the closest node (``k``, the winner), and the second closest (``r``)
+    - if ``k`` and ``r`` are not already connected (neighbors), connect them with a new edge
+    - set the age of the edge between ``k`` and ``r`` to 0
+    - the age of all other edges from ``k`` is incremented by one
+      - if any edge becomes too old (``> a_max``), remove it
+      - if any node loses its last edge this way, remove that node as well
+- how to grow (when and where should we insert new nodes)?
+  - every time a winner, ``k``, is found, add the distance (from the input) to a local error variable
+    - error is proportional to the accumulated distance this node has moved, as a winner
+  - at fixed time intervals, insert a new node where it is most likely needed
+    - halfway between the node with the largest error, and the node among its current neighbors with the largest error
+  - the error of a node is decayed over time
+- extension: GNG-U: removes nodes with low utility, based on frequency of winning and closeness to other nodes
+- GNG is used mostly for modeling distributions
+  - can be used to train the hidden nodes in RBF networks
