@@ -1,0 +1,59 @@
+# Lecture: Introduction to Evolutionary Computing
+
+Readings: Ch 8, Computational Intelligence: An Introduction, Andries P. Engelbrecht
+
+### Evolutionary Computing (EC)
+- population method (facilitates parallel search)
+- used for learning problems where the task is to maximize some measure of success
+- methods inspired by genetics, natural selection, evolution (but usually controlled, so it's more like breeding)
+- evolutionary computing
+  - genetic algorithms (GA)
+    - evolutionary strategies (ES)
+    - differential evolution (DE)
+    - cultural evolution (CE)
+  - co-evolution (predator-prey)
+  - genetic programming (GP)
+    - evolutionary programming (EP)
+- an evolutionary algorithm
+  - create a population of individuals
+    - an individual is an encoding of a suggested solution to the problem
+  - evaluate all individuals (for selection)
+    - requires an interpretation of the encoding, and an evaluation of its fitness
+  - create a new population by reproduction, recombination and/or mutation of individuals
+    - during selection, fit individuals are more likely to affect the new population than non-fit ones
+  - repeat from step 2 (evaluate all individuals)
+- a solution to the problem is encoded by an individual's genotype (genome, chromosome), e.g. (in GA) a binary string
+- a genotype's fitness (a scalar) is evaluated by a fitness function
+  - requires an interpretation of the genotype (the phenotype)
+  - it is the phenotype which is evaluated
+  - genotype-phenotype mapping may be many-to-many (and one-to-many)
+- selection
+  - selection of an individual is probabilistic, based on fitness or rank
+  - fitness selection: select individuals with probability proportional to their fitness
+  - rank selection: select individuals with probability proportional to their rank (in a list, sorted w.r.t fitness)
+  - all individuals have some probability of being selected
+  - allow re-selection
+- reproduction
+  - select an individual (as in selection)
+  - copy the selected individual, unaltered, to the new population
+  - elitism: guarantee that the most fit individual(s) are reproduced this way (to avoid accidental destruction of the best solutions found so far)
+- re-combination
+  - select two individuals (as in selection)
+  - perform a crossover of the two genotypes, creating two new genotypes/individuals
+  - insert the new individual in the population
+  - example:
+    - 1-point crossover
+      - selects a crossover point, and the bit strings after that point are swapped between the two parents
+    - 2-point crossover
+      - two bit positions are randomly selected, and the bit strings between these two are swapped
+    - uniform crossover
+      - randomly select from which point to pick a bit (or alter)
+  - note: some genotypes may be illegal (breaking syntactic or semantic rules)
+  - crossover 'should' be defined so that such genotypes can not be produced (an alternative could be to create a fitness function which would give a very low fitness to illegal individuals)
+- mutation
+  - reproduction with noise
+  - some part in the copy is altered at random (e.g. in GA, by flipping bits)
+  - mutation should have very low probability
+    - the prime search operator in EC is usually crossover
+  - mutation roughly corresponds to stochastic action selection in RL
+  - some authors recommend inverted selection for mutation (higher probability to mutate low fitness individuals)
