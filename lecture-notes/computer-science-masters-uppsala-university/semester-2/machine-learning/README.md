@@ -25,3 +25,4 @@ The practical part consists of lab assignments and a project assignment. The sub
   - [Unsupervised Learning Neural Networks](ch-4-unsupervised-learning-neural-networks.md)
   - [Radial Basis Function Networks](ch-5-radial-basis-function-networks.md)
   - [Introduction to Evolutionary Computing](ch-8-introduction-to-evolutionary-computing.md)
+  - [Genetic Algorithms](ch-9-genetic-algorithms.md)
