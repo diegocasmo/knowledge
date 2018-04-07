@@ -26,4 +26,4 @@ The practical part consists of lab assignments and a project assignment. The sub
   - [Radial Basis Function Networks](ch-05-radial-basis-function-networks.md)
   - [Introduction to Evolutionary Computing](ch-08-introduction-to-evolutionary-computing.md)
   - [Genetic Algorithms](ch-09-genetic-algorithms.md)
-  - [Particle Swarm Optimization](ch-16-particle swarm optimization.md)
+  - [Particle Swarm Optimization](ch-16-particle-swarm-optimization.md)
