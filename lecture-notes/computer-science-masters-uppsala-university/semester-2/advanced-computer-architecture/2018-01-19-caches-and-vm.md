@@ -2,18 +2,17 @@
 
 ### What Is A Cache?
 - motivation behind caches is to avoid accessing data directly from the memory as it is slow
-- in a direct mapped cache, a block has only one place it can appear in the cache (does not provide good uniform distribution of data)
-- in a fully associative cache, a block can be placed anywhere
-  - a fully associative cache has no index field
-- in a set associative cache, a block can be placed in a restricted set of places in the cache
-  - if there are ``n`` blocks in a set, the cache placement is called ``n``-way set associative
-  - direct mapped can be thought as a ``1``-way set associative
-  - a fully associative cache with ``m`` blocks could be called ``m``-way set associative
 - a cache is a small memory that is in-between the CPU and memory
 - before doing a lookup in memory, data is looked up in the cache
   - input to the cache is an address that would like to be looked at
   - cache will return data as well a signal 'hint' if the data can be trusted
   - if the signal 'hint' says the data cannot be trusted, then memory needs to be accessed to get the most up-to-date value and possibly update the cache
+- in a direct mapped cache, a block has only one place it can appear in the cache (does not provide good uniform distribution of data)
+- in a fully associative cache, a block can be placed anywhere (a fully associative cache has no index field)
+- in a set associative cache, a block can be placed in a restricted set of places in the cache
+  - if there are ``n`` blocks in a set, the cache placement is called ``n``-way set associative
+  - direct mapped can be thought as a ``1``-way set associative
+  - a fully associative cache with ``m`` blocks could be called ``m``-way set associative
 - when the requested data is found in the cache, it is called a cache hit
 - if the requested data is not found on the cache, it is called a cache miss
 - the assigned cost per miss is called the miss penalty
@@ -28,7 +27,7 @@
   - uses address bits from the ``lsb`` (least significant bits) end which provide a better distribution of values (are more likely to change rapidly throughout the execution)
 - hit: use the data provided from the cache
 - not-hit: use data from memory and possibly store it in the cache
-- given a 32 bit input, with its ``msb`` and ``lsb``, how to implement a direct-mapped cache:
+- given a 32 bit input, with its ``msb`` and ``lsb``, how to implement a direct-mapped cache that stores 1K entries:
   - toss away the last 2 ``lsb``
   - use next 10 ``lsb`` for the indexing function
   - read the value stored in cache identified by those 10 ``lsb``
@@ -48,10 +47,6 @@
   - hit time (CPU cycles)
   - miss time (CPU cycles)
   - memory ratio % (fraction of instructions to access memory)
-  - ...
-- ``CPI = 1 - mem_ratio +
-        mem_ratio * (hit_ratio * hit_time) +
-        mem_ratio * (1 - hit_ratio) * miss_time``
 - cache optimizations categories
   - reducing the miss rate: larger block size, larger cache size, and higher associativity
   - reducing the miss penalty: multilevel caches and giving reads priority over writes
@@ -76,7 +71,7 @@
 ### Associativity
 - two-way associative cache
   - cache is made up of sets that can fit two blocks each
-  - the index is used to find the set, and the tag helps find the block within the set
+  - the index is used to find the set, and the address tag helps find the block within the set
 - pros
   - avoid conflict misses
 - cons

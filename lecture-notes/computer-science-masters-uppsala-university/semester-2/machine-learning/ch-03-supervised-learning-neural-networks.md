@@ -5,14 +5,13 @@ Readings: Ch 3, Computational Intelligence: An Introduction, Andries P. Engelbre
 ### Neural Network Types
 - a single neuron implementing summation units (SU) can be used to realize linearly separable functions only
 - a layered network is required for functions that are not linearly separable
-- feed forward neural networks (FFNN)
-  - the output of a FFNN is computed with a single forward pass through the network
-  - activation functions of a neural network do not need to all be the same
+- feed-forward networks
+  - in this network, the information moves in only one direction, forward, from the input nodes, through the hidden nodes (if any) and to the output nodes
+  - there are no cycles or loops in the network
   - applications: classification, function approximation, perception
-- simple recurrent neural networks (SRNN)
-  - has feedback connections which add the type ability to also learn the temporal characteristics of the data set
-  - the previous state of the output layer then also serves as input to the network
-  - applications: recognizing/generating sequences of patterns. linguistics. training: supervised
+- recurrent networks
+  - layered networks with recurrent connections between layers
+  - applications: recognizing/generating sequences of patterns, linguistics
 - fully interconnected recurrent networks
   - description: ??
   - applications: associative memories, combinatorial optimization problems

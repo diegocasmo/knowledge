@@ -69,7 +69,7 @@ Readings: Ch 8, Computational Intelligence: An Introduction, Andries P. Engelbre
   - the objective function is used only in selection of individuals, not how to change them
 - RL is perhaps more clever in its search, but EC compensates by its more global view
 
-## EC and Neural Networks
+### EC and Neural Networks
 - EC (in particular, GA) can be a very effective way to search for the best combination of parameters to control/define something
 - GA can be used to evolve, rather than train, ANNs
 - could combine the two forms of learning, evolve initial network configuration and training parameters, then train the networks using neural learning algorithms
