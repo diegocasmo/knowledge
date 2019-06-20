@@ -14,4 +14,4 @@ One of my favorite things about OKRs is that these enforce creating [SMART](http
 
 Measuring how my day-to-day actions relate to my personal goals has been a complete game changer. OKRs is the one framework that has allowed me to do so consistently for the past three years.
 
-How do you hold yourself accountable for personal growth? Leave a comment below if you do, I would love to read more about others' approach to personal growth!
+How do you hold yourself accountable for your personal growth? Leave a comment below if you do, I would love to read more about others' approach to personal growth!
