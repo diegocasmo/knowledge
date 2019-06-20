@@ -1,6 +1,9 @@
 # Blog Posts - Software
 
 - [Using Active Support Concerns to Encapsulate Data Access and Validation](2019-08-12-using-active-support-concerns-to-encapsulate-data-access-and-validation.md)
+- [IAM Dataset Writer Recognition Using a CNN](2018-11-09-iam-dataset-writer-recognition-using-a-cnn.md)
+- [Convolutional Neural Networks For Galaxy Morphology Classification](2018-10-24-convolutional-neural-networks-for-galaxy-morphology-classification.md)
+- [Notes on YDKJS: Scope & Closures](2018-10-15-notes-on-ydkjs-scope-&-closures.md)
 - [A Short List of Good Practices in Programming](2017-06-19-good-programming-practices.md)
 - [A Simple React ``<Tabs/>`` Component](2017-02-06-a-simple-react-tabs-component.md)
 - [Navigation Redirects Through Redux Middleware](2017-01-23-navigation-redirects-through-redux-middleware.md)
