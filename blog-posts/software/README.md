@@ -1,5 +1,6 @@
 # Blog Posts - Software
 
+- [Using Postgres Enum Type in Rails](2019-08-19-using-postgres-enum-type-in-rails.md)
 - [Using Active Support Concerns to Encapsulate Data Access and Validation](2019-08-12-using-active-support-concerns-to-encapsulate-data-access-and-validation.md)
 - [IAM Dataset Writer Recognition Using a CNN](2018-11-09-iam-dataset-writer-recognition-using-a-cnn.md)
 - [Convolutional Neural Networks For Galaxy Morphology Classification](2018-10-24-convolutional-neural-networks-for-galaxy-morphology-classification.md)
