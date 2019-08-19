@@ -69,7 +69,7 @@ RSpec.describe Project, type: :model do
 end
 ```
 
-The unit test verifies the `status` column is defined in the `Project` model and its column type is `enum`. Also, it makes sure the `status` enum values are correctly defined as specified in the `status` hash. Finally, the last test confirms the `Project` model allows the `status` attribute to be set using the `:active` and `:archived` symbols.
+The first unit test verifies the `status` column is defined in the `Project` model and its column type is `enum`. Also, it makes sure the `status` enum values are correctly defined as specified in the `status` hash. Finally, the last test confirms the `Project` model allows the `status` attribute to be set using the `:active` and `:archived` symbols.
 
 ### Conclusion
 
