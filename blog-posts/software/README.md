@@ -1,5 +1,6 @@
 # Blog Posts - Software
 
+- [Create a Simple React &lt;Timer/&gt; Component ⌛](2020-10-19-create-a-simple-react-timer-component.md)
 - [Using Postgres Enum Type in Rails](2019-08-19-using-postgres-enum-type-in-rails.md)
 - [Using Active Support Concerns to Encapsulate Data Access and Validation](2019-08-12-using-active-support-concerns-to-encapsulate-data-access-and-validation.md)
 - [IAM Dataset Writer Recognition Using a CNN](2018-11-09-iam-dataset-writer-recognition-using-a-cnn.md)
