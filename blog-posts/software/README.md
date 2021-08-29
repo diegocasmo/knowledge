@@ -1,5 +1,6 @@
 # Blog Posts - Software
 
+- [Email and Password Based Authentication with Expo and Firebase Part 1: Project Setup](2021-08-20-email-and-password-based-authentication-with-expo-and-firebase-part-1-project-setup.md)
 - [Create a Simple React Timer Component ⌛](2020-10-19-create-a-simple-react-timer-component.md)
 - [Using Postgres Enum Type in Rails](2019-08-19-using-postgres-enum-type-in-rails.md)
 - [Using Active Support Concerns to Encapsulate Data Access and Validation](2019-08-12-using-active-support-concerns-to-encapsulate-data-access-and-validation.md)
