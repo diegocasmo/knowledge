@@ -1,11 +1,11 @@
 - This is part 1/3 of a series of blog posts that showcase email and password based authentication using Expo and Firebase.
     - Part 1: Project Setup (you are here)
     - Part 2: Sign up, Email Verification, and Sign In (coming soon)
-    - Part 3: Sign out, Reset Password, and Conclusion (coming soon)
+    - Part 3: Sign out, Forgot Password, Password Reset, and Conclusion (coming soon)
 
 For a while now, I've been using Firebase as my go-to tool to quickly setup an email and password based authentication flow when working with Expo. While there are many other solutions out there, I've yet to find one that allows me to get started so quickly as Firebase does.
 
-The goal of this series of blog posts, is to provide a simple example of how to setup Expo and Firebase with email and password based authentication. When done, this app will support sign up, sign in, sign out, email verification, and password reset. All the code for this series of blog posts is available on [this Github repository](https://github.com/diegocasmo/expo-firebase-authentication). Let's jump right in.
+The goal of this series of blog posts, is to provide a simple example of how to setup Expo and Firebase with email and password based authentication. When done, this app will support sign up, sign in, sign out, email verification, forgot password, and password reset. All the code for this series of blog posts is available on [this Github repository](https://github.com/diegocasmo/expo-firebase-authentication). Let's jump right in.
 
 ## Create a New Expo App
 
@@ -119,7 +119,7 @@ Let's now create the "application structure". The application structure will use
 
 ```bash
 src/
-	App.js
+	Root.js
   api/ # API-only methods (Firebase)
   components/ # Re-usable components (among many features)
   features/
@@ -128,13 +128,13 @@ src/
       screens/ # Container type component(s) which setup layout/structure and higher level logic
 ```
 
-The first step is to move the `App.js` file inside the `src/` directory. Run `mv App.js src/App.js` to do so, and update the `package.json` file so that `main` points to `src/App.js`:
+The first step is to create the `Root.js` file. To do so, copy `App.js` by running `cp App.js src/Root.js`, then remove `App.js` (`rm App.js`), and update the `package.json` file so that `main` points to `src/Root.js`:
 
 ```bash
-"main": "src/App.js"
+"main": "src/Root.js"
 ```
 
-Next, replace the contents of `App.js` so that it imports the Firebase API, setup the `native-base` provider, and register the root Expo component.
+Next, replace the contents of `Root.js` so that it imports the Firebase API, setup the `native-base` provider, and register the root Expo component.
 
 ```jsx
 import './api';
@@ -143,14 +143,14 @@ import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { NativeBaseProvider, Box } from 'native-base';
 
-const App = () => (
+const Root = () => (
   <NativeBaseProvider>
     <Box>Hello world</Box>
     <StatusBar style="auto" />
   </NativeBaseProvider>
 );
 
-registerRootComponent(App);
+registerRootComponent(Root);
 ```
 
 Start the Expo server once again by running `npm start` and make sure the "Hello world" message is correctly shown.
