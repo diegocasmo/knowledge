@@ -1,7 +1,7 @@
 - This is part 1/3 of a series of blog posts that showcase email and password based authentication using Expo and Firebase.
     - Part 1: Project Setup (you are here)
-    - Part 2: Sign up, Email Verification, and Sign In (coming soon)
-    - Part 3: Sign out, Forgot Password, Password Reset, and Conclusion (coming soon)
+    - Part 2: Sign up, Email Verification, and Sign Out (coming soon)
+    - Part 3: Sign In, Forgot Password, Password Reset, and Conclusion (coming soon)
 
 For a while now, I've been using Firebase as my go-to tool to quickly setup an email and password based authentication flow when working with Expo. While there are many other solutions out there, I've yet to find one that allows me to get started so quickly as Firebase does.
 
@@ -157,4 +157,4 @@ Start the Expo server once again by running `npm start` and make sure the "Hello
 
 ## Re-cap
 
-In this blog post, we've gone over setting up Expo and Firebase together with the goal of implementing an email and password based authentication system. Additionally, a common set of libraries were installed and setup to make it easier to implement the upcoming features the app will need. In the next blog post, we'll implement the sign up, email verification, and sign in features.
+In this blog post, we've gone over setting up Expo and Firebase together with the goal of implementing an email and password based authentication system. Additionally, a common set of libraries were installed and setup to make it easier to implement the upcoming features the app will need. In the next blog post, we'll implement the sign up, email verification, and sign out features.
